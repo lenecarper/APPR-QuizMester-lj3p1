@@ -21,5 +21,27 @@ namespace APPR_QuizMester_lj3p1
         {
             
         }
+
+        private void txbUsername_Click(object sender, EventArgs e)
+        {
+            txbUsername.SelectAll();
+        }
+
+        private void txbPassword_Click(object sender, EventArgs e)
+        {
+            txbPassword.SelectAll();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txbUsername.Text == "")
+            {
+                lblUsernameError.Text = "Wrong username, please try again";
+            }
+            else if (txbPassword.Text == "")
+            {
+                lblPasswordError.Text = "Wrong password, please try again";
+            }
+        }
     }
 }
