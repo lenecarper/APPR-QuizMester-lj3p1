@@ -33,6 +33,7 @@ namespace APPR_QuizMester_lj3p1
             this.pnlTopHeader = new System.Windows.Forms.Panel();
             this.pnlLoginLogo = new System.Windows.Forms.Panel();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblPasswordError = new System.Windows.Forms.Label();
             this.pnlBottom2 = new System.Windows.Forms.Panel();
@@ -46,7 +47,8 @@ namespace APPR_QuizMester_lj3p1
             this.lblUsername = new System.Windows.Forms.Label();
             this.txbUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.linkCreateAccount = new System.Windows.Forms.LinkLabel();
             this.pnlLogin.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPassword)).BeginInit();
@@ -56,7 +58,7 @@ namespace APPR_QuizMester_lj3p1
             // 
             // pnlTopHeader
             // 
-            this.pnlTopHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
+            this.pnlTopHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.pnlTopHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopHeader.Location = new System.Drawing.Point(5, 5);
             this.pnlTopHeader.Name = "pnlTopHeader";
@@ -65,7 +67,7 @@ namespace APPR_QuizMester_lj3p1
             // 
             // pnlLoginLogo
             // 
-            this.pnlLoginLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(53)))), ((int)(((byte)(71)))));
+            this.pnlLoginLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.pnlLoginLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLoginLogo.Location = new System.Drawing.Point(5, 55);
             this.pnlLoginLogo.Name = "pnlLoginLogo";
@@ -74,6 +76,8 @@ namespace APPR_QuizMester_lj3p1
             // 
             // pnlLogin
             // 
+            this.pnlLogin.Controls.Add(this.linkCreateAccount);
+            this.pnlLogin.Controls.Add(this.linkForgotPassword);
             this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.panel3);
             this.pnlLogin.Controls.Add(this.panel1);
@@ -83,6 +87,21 @@ namespace APPR_QuizMester_lj3p1
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(908, 504);
             this.pnlLogin.TabIndex = 2;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnLogin.FlatAppearance.BorderSize = 2;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Location = new System.Drawing.Point(317, 409);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(217, 56);
+            this.btnLogin.TabIndex = 8;
+            this.btnLogin.Text = "Log in";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // panel3
             // 
@@ -218,20 +237,28 @@ namespace APPR_QuizMester_lj3p1
             this.lblLogin.TabIndex = 0;
             this.lblLogin.Text = "Login";
             // 
-            // btnLogin
+            // linkForgotPassword
             // 
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnLogin.FlatAppearance.BorderSize = 2;
-            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(317, 388);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(217, 56);
-            this.btnLogin.TabIndex = 8;
-            this.btnLogin.Text = "Log in";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.linkForgotPassword.AutoSize = true;
+            this.linkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linkForgotPassword.Location = new System.Drawing.Point(351, 380);
+            this.linkForgotPassword.Name = "linkForgotPassword";
+            this.linkForgotPassword.Size = new System.Drawing.Size(153, 17);
+            this.linkForgotPassword.TabIndex = 9;
+            this.linkForgotPassword.TabStop = true;
+            this.linkForgotPassword.Text = "Forgot your password?";
+            this.linkForgotPassword.VisitedLinkColor = System.Drawing.Color.Yellow;
+            // 
+            // linkCreateAccount
+            // 
+            this.linkCreateAccount.AutoSize = true;
+            this.linkCreateAccount.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.linkCreateAccount.Location = new System.Drawing.Point(369, 477);
+            this.linkCreateAccount.Name = "linkCreateAccount";
+            this.linkCreateAccount.Size = new System.Drawing.Size(124, 17);
+            this.linkCreateAccount.TabIndex = 10;
+            this.linkCreateAccount.TabStop = true;
+            this.linkCreateAccount.Text = "Create an account";
             // 
             // Form1
             // 
@@ -279,6 +306,8 @@ namespace APPR_QuizMester_lj3p1
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.LinkLabel linkCreateAccount;
+        private System.Windows.Forms.LinkLabel linkForgotPassword;
     }
 }
 
