@@ -19,7 +19,7 @@ namespace APPR_QuizMester_lj3p1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            tmrClearErrors.Start();
         }
 
         private void txbUsername_Click(object sender, EventArgs e)
@@ -60,33 +60,46 @@ namespace APPR_QuizMester_lj3p1
             {
                 lblRegisterUsernameError.Text = "Username cannot be blank or already exists";
             }
-            else
-            {
-                lblRegisterUsernameError.Text = "";
-            }
 
             if (txbRegisterPassword.Text == "")
             {
                 lblRegisterPasswordError.Text = "Password cannot be blank";
-            }
-            else
-            {
-                lblRegisterPasswordError.Text = "";
             }
 
             if (txbConfirmPassword.Text == "" || txbConfirmPassword.Text != txbRegisterPassword.Text)
             {
                 lblConfirmPasswordError.Text = "Passwords do not match";
             }
-            else
-            {
-                lblConfirmPasswordError.Text = "";
-            }
         }
 
         private void lblRegisterPasswordError_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblUsernameError.Text = "";
+            lblPasswordError.Text = "";
+            lblRegisterUsernameError.Text = "";
+            lblRegisterPasswordError.Text = "";
+            lblConfirmPasswordError.Text = "";
+        }
+
+        private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlLogin.Visible = true;
+            pnlLogin.Dock = DockStyle.Fill;
+            pnlRegister.Visible = false;
+            pnlLogo.Dock = DockStyle.Left;
+        }
+
+        private void linkCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            pnlLogin.Visible = false;
+            pnlRegister.Visible = true;
+            pnlLogo.Dock = DockStyle.Right;
+            pnlRegister.Dock = DockStyle.Fill;
         }
     }
 }
