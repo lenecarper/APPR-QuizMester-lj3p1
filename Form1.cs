@@ -19,7 +19,7 @@ namespace APPR_QuizMester_lj3p1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txbUsername_Click(object sender, EventArgs e)
@@ -42,6 +42,51 @@ namespace APPR_QuizMester_lj3p1
             {
                 lblPasswordError.Text = "Wrong password, please try again";
             }
+        }
+
+        private void txbPassword_TextChanged(object sender, EventArgs e)
+        {
+            txbPassword.PasswordChar = '*';
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            if (txbRegisterUser.Text == "")
+            {
+                lblRegisterUsernameError.Text = "Username cannot be blank or already exists";
+            }
+            else
+            {
+                lblRegisterUsernameError.Text = "";
+            }
+
+            if (txbRegisterPassword.Text == "")
+            {
+                lblRegisterPasswordError.Text = "Password cannot be blank";
+            }
+            else
+            {
+                lblRegisterPasswordError.Text = "";
+            }
+
+            if (txbConfirmPassword.Text == "" || txbConfirmPassword.Text != txbRegisterPassword.Text)
+            {
+                lblConfirmPasswordError.Text = "Passwords do not match";
+            }
+            else
+            {
+                lblConfirmPasswordError.Text = "";
+            }
+        }
+
+        private void lblRegisterPasswordError_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
