@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,7 @@ namespace APPR_QuizMester_lj3p1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Placeholder to check if the credentials aren't empty
             if (txbUsername.Text == "")
             {
                 lblUsernameError.Text = "Wrong username, please try again";
@@ -44,6 +46,22 @@ namespace APPR_QuizMester_lj3p1
             else if (txbPassword.Text == "")
             {
                 lblPasswordError.Text = "Wrong password, please try again";
+            }
+
+            // Search the database for the given credentials
+            using (SqlConnection cn = new SqlConnection(connectionString))
+            {
+                // Check if there is a database connection open
+                if (cn.State == ConnectionState.Closed)
+                {
+                    // Open a database connection if one cannot be found
+                    cn.Open();
+                }
+
+                using (DataTable dt = new DataTable("Users"))
+                {
+
+                }
             }
         }
 
