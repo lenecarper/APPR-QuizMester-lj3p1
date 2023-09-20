@@ -48,7 +48,13 @@ namespace APPR_QuizMester_lj3p1
                 lblPasswordError.Text = "Wrong password, please try again";
             }
 
-            // Search the database for the given credentials
+
+            if (txbUsername.Text != "" && txbPassword.Text != "")
+            {
+                
+            }    
+
+            /*// Search the database for the given credentials
             using (SqlConnection cn = new SqlConnection(connectionString))
             {
                 // Check if there is a database connection open
@@ -58,11 +64,18 @@ namespace APPR_QuizMester_lj3p1
                     cn.Open();
                 }
 
+                // Datatable with the name dt checking for users
                 using (DataTable dt = new DataTable("Users"))
                 {
-
+                    using (SqlCommand cmd = new SqlCommand("Select * from Users where Username = @Username;"))
+                    {
+                        cmd.Parameters.AddWithValue("Username", txbUsername.Text);
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(dt);
+                        // lblLogin.Text = dt.ToString();
+                    }
                 }
-            }
+            }*/
         }
 
         private void txbPassword_TextChanged(object sender, EventArgs e)
