@@ -98,7 +98,7 @@ namespace APPR_QuizMester_lj3p1
         {
             pnlLogin.Visible = false;
             pnlRegister.Visible = true;
-            pnlLogo.Dock = DockStyle.Right;
+           pnlLogo.Dock = DockStyle.Right;
             pnlRegister.Dock = DockStyle.Fill;
         }
     }

@@ -135,7 +135,6 @@ namespace APPR_QuizMester_lj3p1
             this.pnlLogin.Controls.Add(this.panel3);
             this.pnlLogin.Controls.Add(this.panel1);
             this.pnlLogin.Controls.Add(this.lblLogin);
-            this.pnlLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlLogin.Location = new System.Drawing.Point(205, 55);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(908, 504);
@@ -149,8 +148,7 @@ namespace APPR_QuizMester_lj3p1
             this.pnlRegister.Controls.Add(this.pnlRegisterPassword);
             this.pnlRegister.Controls.Add(this.pnlRegisterUser);
             this.pnlRegister.Controls.Add(this.lblRegister);
-            this.pnlRegister.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRegister.Location = new System.Drawing.Point(0, 0);
+            this.pnlRegister.Location = new System.Drawing.Point(317, 82);
             this.pnlRegister.Name = "pnlRegister";
             this.pnlRegister.Size = new System.Drawing.Size(908, 504);
             this.pnlRegister.TabIndex = 11;
@@ -571,8 +569,8 @@ namespace APPR_QuizMester_lj3p1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1118, 564);
-            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlLogo);
+            this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlTopHeader);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
