@@ -34,6 +34,7 @@ namespace APPR_QuizMester_lj3p1
             this.pnlTopHeader = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.pnlLogin = new System.Windows.Forms.Panel();
             this.pnlRegister = new System.Windows.Forms.Panel();
             this.pnlConfirmPassword = new System.Windows.Forms.Panel();
@@ -74,9 +75,9 @@ namespace APPR_QuizMester_lj3p1
             this.txbUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.tmrClearErrors = new System.Windows.Forms.Timer(this.components);
-            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.pnlTopHeader.SuspendLayout();
             this.pnlLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlLogin.SuspendLayout();
             this.pnlRegister.SuspendLayout();
             this.pnlConfirmPassword.SuspendLayout();
@@ -89,7 +90,6 @@ namespace APPR_QuizMester_lj3p1
             ((System.ComponentModel.ISupportInitialize)(this.pcbPassword)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbUsername)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTopHeader
@@ -119,6 +119,7 @@ namespace APPR_QuizMester_lj3p1
             // pnlLogo
             // 
             this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.pnlLogo.Controls.Add(this.pnlRegister);
             this.pnlLogo.Controls.Add(this.pcbLogo);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLogo.Location = new System.Drawing.Point(5, 55);
@@ -126,9 +127,18 @@ namespace APPR_QuizMester_lj3p1
             this.pnlLogo.Size = new System.Drawing.Size(200, 504);
             this.pnlLogo.TabIndex = 1;
             // 
+            // pcbLogo
+            // 
+            this.pcbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbLogo.BackgroundImage")));
+            this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbLogo.Location = new System.Drawing.Point(3, 136);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(191, 201);
+            this.pcbLogo.TabIndex = 0;
+            this.pcbLogo.TabStop = false;
+            // 
             // pnlLogin
             // 
-            this.pnlLogin.Controls.Add(this.pnlRegister);
             this.pnlLogin.Controls.Add(this.linkCreateAccount);
             this.pnlLogin.Controls.Add(this.linkForgotPassword);
             this.pnlLogin.Controls.Add(this.btnLogin);
@@ -148,7 +158,7 @@ namespace APPR_QuizMester_lj3p1
             this.pnlRegister.Controls.Add(this.pnlRegisterPassword);
             this.pnlRegister.Controls.Add(this.pnlRegisterUser);
             this.pnlRegister.Controls.Add(this.lblRegister);
-            this.pnlRegister.Location = new System.Drawing.Point(317, 82);
+            this.pnlRegister.Location = new System.Drawing.Point(200, 0);
             this.pnlRegister.Name = "pnlRegister";
             this.pnlRegister.Size = new System.Drawing.Size(908, 504);
             this.pnlRegister.TabIndex = 11;
@@ -220,7 +230,7 @@ namespace APPR_QuizMester_lj3p1
             this.linkLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.linkLogin.Location = new System.Drawing.Point(394, 468);
             this.linkLogin.Name = "linkLogin";
-            this.linkLogin.Size = new System.Drawing.Size(173, 17);
+            this.linkLogin.Size = new System.Drawing.Size(162, 16);
             this.linkLogin.TabIndex = 16;
             this.linkLogin.TabStop = true;
             this.linkLogin.Text = "Already have an account?";
@@ -380,7 +390,7 @@ namespace APPR_QuizMester_lj3p1
             this.linkCreateAccount.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.linkCreateAccount.Location = new System.Drawing.Point(369, 477);
             this.linkCreateAccount.Name = "linkCreateAccount";
-            this.linkCreateAccount.Size = new System.Drawing.Size(124, 17);
+            this.linkCreateAccount.Size = new System.Drawing.Size(115, 16);
             this.linkCreateAccount.TabIndex = 10;
             this.linkCreateAccount.TabStop = true;
             this.linkCreateAccount.Text = "Create an account";
@@ -392,7 +402,7 @@ namespace APPR_QuizMester_lj3p1
             this.linkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.linkForgotPassword.Location = new System.Drawing.Point(351, 380);
             this.linkForgotPassword.Name = "linkForgotPassword";
-            this.linkForgotPassword.Size = new System.Drawing.Size(153, 17);
+            this.linkForgotPassword.Size = new System.Drawing.Size(144, 16);
             this.linkForgotPassword.TabIndex = 9;
             this.linkForgotPassword.TabStop = true;
             this.linkForgotPassword.Text = "Forgot your password?";
@@ -553,16 +563,6 @@ namespace APPR_QuizMester_lj3p1
             this.tmrClearErrors.Interval = 3000;
             this.tmrClearErrors.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pcbLogo
-            // 
-            this.pcbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbLogo.BackgroundImage")));
-            this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbLogo.Location = new System.Drawing.Point(3, 136);
-            this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(191, 201);
-            this.pcbLogo.TabIndex = 0;
-            this.pcbLogo.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -580,6 +580,7 @@ namespace APPR_QuizMester_lj3p1
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlTopHeader.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             this.pnlRegister.ResumeLayout(false);
@@ -599,7 +600,6 @@ namespace APPR_QuizMester_lj3p1
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbUsername)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
