@@ -31,11 +31,6 @@ namespace APPR_QuizMester_lj3p1
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pnlTopHeader = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.pnlLogo = new System.Windows.Forms.Panel();
-            this.pcbLogo = new System.Windows.Forms.PictureBox();
-            this.pnlLogin = new System.Windows.Forms.Panel();
             this.pnlRegister = new System.Windows.Forms.Panel();
             this.pnlConfirmPassword = new System.Windows.Forms.Panel();
             this.lblConfirmPasswordError = new System.Windows.Forms.Label();
@@ -45,6 +40,7 @@ namespace APPR_QuizMester_lj3p1
             this.txbConfirmPassword = new System.Windows.Forms.TextBox();
             this.linkLogin = new System.Windows.Forms.LinkLabel();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.lblRegister = new System.Windows.Forms.Label();
             this.pnlRegisterPassword = new System.Windows.Forms.Panel();
             this.lblRegisterPasswordError = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -57,7 +53,8 @@ namespace APPR_QuizMester_lj3p1
             this.pcbRegisterUsername = new System.Windows.Forms.PictureBox();
             this.lblRegisterUsername = new System.Windows.Forms.Label();
             this.txbRegisterUser = new System.Windows.Forms.TextBox();
-            this.lblRegister = new System.Windows.Forms.Label();
+            this.pnlLogin = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.linkCreateAccount = new System.Windows.Forms.LinkLabel();
             this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -75,10 +72,6 @@ namespace APPR_QuizMester_lj3p1
             this.txbUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.tmrClearErrors = new System.Windows.Forms.Timer(this.components);
-            this.pnlTopHeader.SuspendLayout();
-            this.pnlLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
-            this.pnlLogin.SuspendLayout();
             this.pnlRegister.SuspendLayout();
             this.pnlConfirmPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmPassword)).BeginInit();
@@ -86,81 +79,24 @@ namespace APPR_QuizMester_lj3p1
             ((System.ComponentModel.ISupportInitialize)(this.pcbRegisterPassword)).BeginInit();
             this.pnlRegisterUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRegisterUsername)).BeginInit();
+            this.pnlLogin.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPassword)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbUsername)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlTopHeader
-            // 
-            this.pnlTopHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.pnlTopHeader.Controls.Add(this.btnExit);
-            this.pnlTopHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTopHeader.Location = new System.Drawing.Point(5, 5);
-            this.pnlTopHeader.Name = "pnlTopHeader";
-            this.pnlTopHeader.Size = new System.Drawing.Size(1108, 50);
-            this.pnlTopHeader.TabIndex = 0;
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.Maroon;
-            this.btnExit.Location = new System.Drawing.Point(1062, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(46, 50);
-            this.btnExit.TabIndex = 7;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // pnlLogo
-            // 
-            this.pnlLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.pnlLogo.Controls.Add(this.pnlRegister);
-            this.pnlLogo.Controls.Add(this.pcbLogo);
-            this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLogo.Location = new System.Drawing.Point(5, 55);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(200, 504);
-            this.pnlLogo.TabIndex = 1;
-            // 
-            // pcbLogo
-            // 
-            this.pcbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbLogo.BackgroundImage")));
-            this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbLogo.Location = new System.Drawing.Point(3, 136);
-            this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(191, 201);
-            this.pcbLogo.TabIndex = 0;
-            this.pcbLogo.TabStop = false;
-            // 
-            // pnlLogin
-            // 
-            this.pnlLogin.Controls.Add(this.linkCreateAccount);
-            this.pnlLogin.Controls.Add(this.linkForgotPassword);
-            this.pnlLogin.Controls.Add(this.btnLogin);
-            this.pnlLogin.Controls.Add(this.panel3);
-            this.pnlLogin.Controls.Add(this.panel1);
-            this.pnlLogin.Controls.Add(this.lblLogin);
-            this.pnlLogin.Location = new System.Drawing.Point(205, 55);
-            this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(908, 504);
-            this.pnlLogin.TabIndex = 2;
-            // 
             // pnlRegister
             // 
             this.pnlRegister.Controls.Add(this.pnlConfirmPassword);
             this.pnlRegister.Controls.Add(this.linkLogin);
             this.pnlRegister.Controls.Add(this.btnRegister);
+            this.pnlRegister.Controls.Add(this.lblRegister);
             this.pnlRegister.Controls.Add(this.pnlRegisterPassword);
             this.pnlRegister.Controls.Add(this.pnlRegisterUser);
-            this.pnlRegister.Controls.Add(this.lblRegister);
-            this.pnlRegister.Location = new System.Drawing.Point(200, 0);
+            this.pnlRegister.Location = new System.Drawing.Point(536, 16);
             this.pnlRegister.Name = "pnlRegister";
-            this.pnlRegister.Size = new System.Drawing.Size(908, 504);
+            this.pnlRegister.Size = new System.Drawing.Size(566, 553);
             this.pnlRegister.TabIndex = 11;
             // 
             // pnlConfirmPassword
@@ -170,9 +106,9 @@ namespace APPR_QuizMester_lj3p1
             this.pnlConfirmPassword.Controls.Add(this.pcbConfirmPassword);
             this.pnlConfirmPassword.Controls.Add(this.lblConfirmPassword);
             this.pnlConfirmPassword.Controls.Add(this.txbConfirmPassword);
-            this.pnlConfirmPassword.Location = new System.Drawing.Point(175, 303);
+            this.pnlConfirmPassword.Location = new System.Drawing.Point(30, 359);
             this.pnlConfirmPassword.Name = "pnlConfirmPassword";
-            this.pnlConfirmPassword.Size = new System.Drawing.Size(558, 100);
+            this.pnlConfirmPassword.Size = new System.Drawing.Size(495, 90);
             this.pnlConfirmPassword.TabIndex = 14;
             // 
             // lblConfirmPasswordError
@@ -190,16 +126,16 @@ namespace APPR_QuizMester_lj3p1
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Location = new System.Drawing.Point(260, 68);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(285, 1);
+            this.panel6.Size = new System.Drawing.Size(215, 1);
             this.panel6.TabIndex = 5;
             // 
             // pcbConfirmPassword
             // 
             this.pcbConfirmPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmPassword.BackgroundImage")));
             this.pcbConfirmPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pcbConfirmPassword.Location = new System.Drawing.Point(8, 17);
+            this.pcbConfirmPassword.Location = new System.Drawing.Point(8, 12);
             this.pcbConfirmPassword.Name = "pcbConfirmPassword";
-            this.pcbConfirmPassword.Size = new System.Drawing.Size(100, 69);
+            this.pcbConfirmPassword.Size = new System.Drawing.Size(100, 65);
             this.pcbConfirmPassword.TabIndex = 4;
             this.pcbConfirmPassword.TabStop = false;
             // 
@@ -221,14 +157,15 @@ namespace APPR_QuizMester_lj3p1
             this.txbConfirmPassword.ForeColor = System.Drawing.Color.White;
             this.txbConfirmPassword.Location = new System.Drawing.Point(260, 30);
             this.txbConfirmPassword.Name = "txbConfirmPassword";
-            this.txbConfirmPassword.Size = new System.Drawing.Size(285, 29);
+            this.txbConfirmPassword.Size = new System.Drawing.Size(215, 29);
             this.txbConfirmPassword.TabIndex = 3;
+            this.txbConfirmPassword.TextChanged += new System.EventHandler(this.txbConfirmPassword_TextChanged);
             // 
             // linkLogin
             // 
             this.linkLogin.AutoSize = true;
             this.linkLogin.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkLogin.Location = new System.Drawing.Point(394, 468);
+            this.linkLogin.Location = new System.Drawing.Point(276, 488);
             this.linkLogin.Name = "linkLogin";
             this.linkLogin.Size = new System.Drawing.Size(162, 16);
             this.linkLogin.TabIndex = 16;
@@ -238,18 +175,29 @@ namespace APPR_QuizMester_lj3p1
             // 
             // btnRegister
             // 
+            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnRegister.FlatAppearance.BorderSize = 2;
             this.btnRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Location = new System.Drawing.Point(372, 409);
+            this.btnRegister.Location = new System.Drawing.Point(30, 468);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(217, 56);
             this.btnRegister.TabIndex = 14;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // lblRegister
+            // 
+            this.lblRegister.AutoSize = true;
+            this.lblRegister.Font = new System.Drawing.Font("Yu Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegister.Location = new System.Drawing.Point(245, 35);
+            this.lblRegister.Name = "lblRegister";
+            this.lblRegister.Size = new System.Drawing.Size(152, 43);
+            this.lblRegister.TabIndex = 11;
+            this.lblRegister.Text = "Register";
             // 
             // pnlRegisterPassword
             // 
@@ -258,9 +206,9 @@ namespace APPR_QuizMester_lj3p1
             this.pnlRegisterPassword.Controls.Add(this.pcbRegisterPassword);
             this.pnlRegisterPassword.Controls.Add(this.lblRegisterPassword);
             this.pnlRegisterPassword.Controls.Add(this.txbRegisterPassword);
-            this.pnlRegisterPassword.Location = new System.Drawing.Point(175, 184);
+            this.pnlRegisterPassword.Location = new System.Drawing.Point(30, 238);
             this.pnlRegisterPassword.Name = "pnlRegisterPassword";
-            this.pnlRegisterPassword.Size = new System.Drawing.Size(558, 100);
+            this.pnlRegisterPassword.Size = new System.Drawing.Size(495, 90);
             this.pnlRegisterPassword.TabIndex = 13;
             // 
             // lblRegisterPasswordError
@@ -272,23 +220,22 @@ namespace APPR_QuizMester_lj3p1
             this.lblRegisterPasswordError.Name = "lblRegisterPasswordError";
             this.lblRegisterPasswordError.Size = new System.Drawing.Size(0, 17);
             this.lblRegisterPasswordError.TabIndex = 6;
-            this.lblRegisterPasswordError.Click += new System.EventHandler(this.lblRegisterPasswordError_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Location = new System.Drawing.Point(260, 68);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(285, 1);
+            this.panel5.Size = new System.Drawing.Size(215, 1);
             this.panel5.TabIndex = 5;
             // 
             // pcbRegisterPassword
             // 
             this.pcbRegisterPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbRegisterPassword.BackgroundImage")));
             this.pcbRegisterPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pcbRegisterPassword.Location = new System.Drawing.Point(8, 17);
+            this.pcbRegisterPassword.Location = new System.Drawing.Point(8, 10);
             this.pcbRegisterPassword.Name = "pcbRegisterPassword";
-            this.pcbRegisterPassword.Size = new System.Drawing.Size(100, 69);
+            this.pcbRegisterPassword.Size = new System.Drawing.Size(100, 70);
             this.pcbRegisterPassword.TabIndex = 4;
             this.pcbRegisterPassword.TabStop = false;
             // 
@@ -310,8 +257,9 @@ namespace APPR_QuizMester_lj3p1
             this.txbRegisterPassword.ForeColor = System.Drawing.Color.White;
             this.txbRegisterPassword.Location = new System.Drawing.Point(260, 30);
             this.txbRegisterPassword.Name = "txbRegisterPassword";
-            this.txbRegisterPassword.Size = new System.Drawing.Size(285, 29);
+            this.txbRegisterPassword.Size = new System.Drawing.Size(215, 29);
             this.txbRegisterPassword.TabIndex = 3;
+            this.txbRegisterPassword.TextChanged += new System.EventHandler(this.txbRegisterPassword_TextChanged);
             // 
             // pnlRegisterUser
             // 
@@ -320,9 +268,9 @@ namespace APPR_QuizMester_lj3p1
             this.pnlRegisterUser.Controls.Add(this.pcbRegisterUsername);
             this.pnlRegisterUser.Controls.Add(this.lblRegisterUsername);
             this.pnlRegisterUser.Controls.Add(this.txbRegisterUser);
-            this.pnlRegisterUser.Location = new System.Drawing.Point(175, 60);
+            this.pnlRegisterUser.Location = new System.Drawing.Point(30, 106);
             this.pnlRegisterUser.Name = "pnlRegisterUser";
-            this.pnlRegisterUser.Size = new System.Drawing.Size(558, 100);
+            this.pnlRegisterUser.Size = new System.Drawing.Size(495, 100);
             this.pnlRegisterUser.TabIndex = 12;
             // 
             // lblRegisterUsernameError
@@ -330,7 +278,7 @@ namespace APPR_QuizMester_lj3p1
             this.lblRegisterUsernameError.AutoSize = true;
             this.lblRegisterUsernameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegisterUsernameError.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblRegisterUsernameError.Location = new System.Drawing.Point(257, 70);
+            this.lblRegisterUsernameError.Location = new System.Drawing.Point(205, 68);
             this.lblRegisterUsernameError.Name = "lblRegisterUsernameError";
             this.lblRegisterUsernameError.Size = new System.Drawing.Size(0, 17);
             this.lblRegisterUsernameError.TabIndex = 6;
@@ -340,7 +288,7 @@ namespace APPR_QuizMester_lj3p1
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.Location = new System.Drawing.Point(260, 68);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(285, 1);
+            this.panel7.Size = new System.Drawing.Size(215, 1);
             this.panel7.TabIndex = 5;
             // 
             // pcbRegisterUsername
@@ -371,24 +319,46 @@ namespace APPR_QuizMester_lj3p1
             this.txbRegisterUser.ForeColor = System.Drawing.Color.White;
             this.txbRegisterUser.Location = new System.Drawing.Point(260, 33);
             this.txbRegisterUser.Name = "txbRegisterUser";
-            this.txbRegisterUser.Size = new System.Drawing.Size(285, 29);
+            this.txbRegisterUser.Size = new System.Drawing.Size(215, 29);
             this.txbRegisterUser.TabIndex = 3;
             // 
-            // lblRegister
+            // pnlLogin
             // 
-            this.lblRegister.AutoSize = true;
-            this.lblRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegister.Location = new System.Drawing.Point(418, 18);
-            this.lblRegister.Name = "lblRegister";
-            this.lblRegister.Size = new System.Drawing.Size(107, 29);
-            this.lblRegister.TabIndex = 11;
-            this.lblRegister.Text = "Register";
+            this.pnlLogin.Controls.Add(this.btnExit);
+            this.pnlLogin.Controls.Add(this.pnlRegister);
+            this.pnlLogin.Controls.Add(this.linkCreateAccount);
+            this.pnlLogin.Controls.Add(this.linkForgotPassword);
+            this.pnlLogin.Controls.Add(this.btnLogin);
+            this.pnlLogin.Controls.Add(this.panel3);
+            this.pnlLogin.Controls.Add(this.panel1);
+            this.pnlLogin.Controls.Add(this.lblLogin);
+            this.pnlLogin.Location = new System.Drawing.Point(8, -4);
+            this.pnlLogin.Name = "pnlLogin";
+            this.pnlLogin.Size = new System.Drawing.Size(1102, 569);
+            this.pnlLogin.TabIndex = 2;
+            this.pnlLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_Event);
+            this.pnlLogin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Event);
+            this.pnlLogin.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp_Event);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnExit.Location = new System.Drawing.Point(1064, -2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(38, 35);
+            this.btnExit.TabIndex = 12;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // linkCreateAccount
             // 
             this.linkCreateAccount.AutoSize = true;
             this.linkCreateAccount.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkCreateAccount.Location = new System.Drawing.Point(369, 477);
+            this.linkCreateAccount.Location = new System.Drawing.Point(189, 504);
             this.linkCreateAccount.Name = "linkCreateAccount";
             this.linkCreateAccount.Size = new System.Drawing.Size(115, 16);
             this.linkCreateAccount.TabIndex = 10;
@@ -400,7 +370,7 @@ namespace APPR_QuizMester_lj3p1
             // 
             this.linkForgotPassword.AutoSize = true;
             this.linkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.linkForgotPassword.Location = new System.Drawing.Point(351, 380);
+            this.linkForgotPassword.Location = new System.Drawing.Point(180, 387);
             this.linkForgotPassword.Name = "linkForgotPassword";
             this.linkForgotPassword.Size = new System.Drawing.Size(144, 16);
             this.linkForgotPassword.TabIndex = 9;
@@ -410,12 +380,13 @@ namespace APPR_QuizMester_lj3p1
             // 
             // btnLogin
             // 
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnLogin.FlatAppearance.BorderSize = 2;
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(317, 409);
+            this.btnLogin.Location = new System.Drawing.Point(142, 427);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(217, 56);
             this.btnLogin.TabIndex = 8;
@@ -430,9 +401,9 @@ namespace APPR_QuizMester_lj3p1
             this.panel3.Controls.Add(this.pcbPassword);
             this.panel3.Controls.Add(this.lblPassword);
             this.panel3.Controls.Add(this.txbPassword);
-            this.panel3.Location = new System.Drawing.Point(126, 260);
+            this.panel3.Location = new System.Drawing.Point(25, 254);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(558, 100);
+            this.panel3.Size = new System.Drawing.Size(440, 100);
             this.panel3.TabIndex = 7;
             // 
             // lblPasswordError
@@ -440,7 +411,7 @@ namespace APPR_QuizMester_lj3p1
             this.lblPasswordError.AutoSize = true;
             this.lblPasswordError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordError.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblPasswordError.Location = new System.Drawing.Point(257, 72);
+            this.lblPasswordError.Location = new System.Drawing.Point(174, 71);
             this.lblPasswordError.Name = "lblPasswordError";
             this.lblPasswordError.Size = new System.Drawing.Size(0, 18);
             this.lblPasswordError.TabIndex = 6;
@@ -448,28 +419,28 @@ namespace APPR_QuizMester_lj3p1
             // pnlBottom2
             // 
             this.pnlBottom2.BackColor = System.Drawing.Color.White;
-            this.pnlBottom2.Location = new System.Drawing.Point(260, 68);
+            this.pnlBottom2.Location = new System.Drawing.Point(212, 68);
             this.pnlBottom2.Name = "pnlBottom2";
-            this.pnlBottom2.Size = new System.Drawing.Size(285, 1);
+            this.pnlBottom2.Size = new System.Drawing.Size(213, 1);
             this.pnlBottom2.TabIndex = 5;
             // 
             // pcbPassword
             // 
             this.pcbPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbPassword.BackgroundImage")));
             this.pcbPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pcbPassword.Location = new System.Drawing.Point(8, 17);
+            this.pcbPassword.Location = new System.Drawing.Point(8, 10);
             this.pcbPassword.Name = "pcbPassword";
-            this.pcbPassword.Size = new System.Drawing.Size(100, 69);
+            this.pcbPassword.Size = new System.Drawing.Size(100, 80);
             this.pcbPassword.TabIndex = 4;
             this.pcbPassword.TabStop = false;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(114, 33);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Location = new System.Drawing.Point(114, 41);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(124, 29);
+            this.lblPassword.Size = new System.Drawing.Size(83, 20);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password";
             // 
@@ -479,9 +450,9 @@ namespace APPR_QuizMester_lj3p1
             this.txbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPassword.ForeColor = System.Drawing.Color.White;
-            this.txbPassword.Location = new System.Drawing.Point(260, 30);
+            this.txbPassword.Location = new System.Drawing.Point(212, 33);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(285, 29);
+            this.txbPassword.Size = new System.Drawing.Size(216, 29);
             this.txbPassword.TabIndex = 3;
             this.txbPassword.Click += new System.EventHandler(this.txbPassword_Click);
             this.txbPassword.TextChanged += new System.EventHandler(this.txbPassword_TextChanged);
@@ -493,9 +464,9 @@ namespace APPR_QuizMester_lj3p1
             this.panel1.Controls.Add(this.pcbUsername);
             this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.txbUsername);
-            this.panel1.Location = new System.Drawing.Point(126, 119);
+            this.panel1.Location = new System.Drawing.Point(25, 122);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(558, 100);
+            this.panel1.Size = new System.Drawing.Size(440, 100);
             this.panel1.TabIndex = 4;
             // 
             // lblUsernameError
@@ -503,7 +474,7 @@ namespace APPR_QuizMester_lj3p1
             this.lblUsernameError.AutoSize = true;
             this.lblUsernameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameError.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblUsernameError.Location = new System.Drawing.Point(257, 70);
+            this.lblUsernameError.Location = new System.Drawing.Point(174, 67);
             this.lblUsernameError.Name = "lblUsernameError";
             this.lblUsernameError.Size = new System.Drawing.Size(0, 18);
             this.lblUsernameError.TabIndex = 6;
@@ -511,9 +482,9 @@ namespace APPR_QuizMester_lj3p1
             // pnlBottom1
             // 
             this.pnlBottom1.BackColor = System.Drawing.Color.White;
-            this.pnlBottom1.Location = new System.Drawing.Point(260, 68);
+            this.pnlBottom1.Location = new System.Drawing.Point(212, 68);
             this.pnlBottom1.Name = "pnlBottom1";
-            this.pnlBottom1.Size = new System.Drawing.Size(285, 1);
+            this.pnlBottom1.Size = new System.Drawing.Size(213, 1);
             this.pnlBottom1.TabIndex = 5;
             // 
             // pcbUsername
@@ -529,10 +500,10 @@ namespace APPR_QuizMester_lj3p1
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(115, 35);
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(114, 44);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(130, 29);
+            this.lblUsername.Size = new System.Drawing.Size(86, 20);
             this.lblUsername.TabIndex = 1;
             this.lblUsername.Text = "Username";
             // 
@@ -542,19 +513,19 @@ namespace APPR_QuizMester_lj3p1
             this.txbUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUsername.ForeColor = System.Drawing.Color.White;
-            this.txbUsername.Location = new System.Drawing.Point(260, 33);
+            this.txbUsername.Location = new System.Drawing.Point(212, 33);
             this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(285, 29);
+            this.txbUsername.Size = new System.Drawing.Size(213, 29);
             this.txbUsername.TabIndex = 3;
             this.txbUsername.Click += new System.EventHandler(this.txbUsername_Click);
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(418, 28);
+            this.lblLogin.Font = new System.Drawing.Font("Yu Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.Location = new System.Drawing.Point(213, 36);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(75, 29);
+            this.lblLogin.Size = new System.Drawing.Size(108, 43);
             this.lblLogin.TabIndex = 0;
             this.lblLogin.Text = "Login";
             // 
@@ -569,20 +540,13 @@ namespace APPR_QuizMester_lj3p1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1118, 564);
-            this.Controls.Add(this.pnlLogo);
             this.Controls.Add(this.pnlLogin);
-            this.Controls.Add(this.pnlTopHeader);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.pnlTopHeader.ResumeLayout(false);
-            this.pnlLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
-            this.pnlLogin.ResumeLayout(false);
-            this.pnlLogin.PerformLayout();
             this.pnlRegister.ResumeLayout(false);
             this.pnlRegister.PerformLayout();
             this.pnlConfirmPassword.ResumeLayout(false);
@@ -594,6 +558,8 @@ namespace APPR_QuizMester_lj3p1
             this.pnlRegisterUser.ResumeLayout(false);
             this.pnlRegisterUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRegisterUsername)).EndInit();
+            this.pnlLogin.ResumeLayout(false);
+            this.pnlLogin.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPassword)).EndInit();
@@ -605,9 +571,6 @@ namespace APPR_QuizMester_lj3p1
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlTopHeader;
-        private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Panel pnlLogin;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblUsername;
@@ -625,7 +588,6 @@ namespace APPR_QuizMester_lj3p1
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel linkCreateAccount;
         private System.Windows.Forms.LinkLabel linkForgotPassword;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel pnlRegister;
         private System.Windows.Forms.LinkLabel linkLogin;
         private System.Windows.Forms.Button btnRegister;
@@ -649,7 +611,7 @@ namespace APPR_QuizMester_lj3p1
         private System.Windows.Forms.Label lblConfirmPassword;
         private System.Windows.Forms.TextBox txbConfirmPassword;
         private System.Windows.Forms.Timer tmrClearErrors;
-        private System.Windows.Forms.PictureBox pcbLogo;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

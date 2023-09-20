@@ -12,6 +12,8 @@ namespace APPR_QuizMester_lj3p1
 {
     public partial class Form1 : Form
     {
+        bool mouseDown;
+        private Point offset;
         public Form1()
         {
             InitializeComponent();
@@ -49,11 +51,6 @@ namespace APPR_QuizMester_lj3p1
             txbPassword.PasswordChar = '*';
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             if (txbRegisterUser.Text == "")
@@ -72,11 +69,6 @@ namespace APPR_QuizMester_lj3p1
             }
         }
 
-        private void lblRegisterPasswordError_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblUsernameError.Text = "";
@@ -88,18 +80,49 @@ namespace APPR_QuizMester_lj3p1
 
         private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pnlLogin.Visible = true;
-            pnlLogin.Dock = DockStyle.Fill;
-            pnlRegister.Visible = false;
-            pnlLogo.Dock = DockStyle.Left;
+            txbUsername.Focus();
         }
 
         private void linkCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            pnlLogin.Visible = false;
-            pnlRegister.Visible = true;
-           pnlLogo.Dock = DockStyle.Right;
-            pnlRegister.Dock = DockStyle.Fill;
+            txbRegisterUser.Focus();
+        }
+
+        private void txbRegisterPassword_TextChanged(object sender, EventArgs e)
+        {
+            txbRegisterPassword.PasswordChar = '*';
+        }
+
+        private void txbConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+            txbRegisterPassword.PasswordChar = '*';
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MouseDown_Event(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void MouseMove_Event(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void MouseUp_Event(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }
