@@ -118,6 +118,20 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnExit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAdxJREFUaEPt
+        mW1Kw0AABXsEj+aN9IZ6o7pT5oGBIk2yX5EdCGiSfe8N2l+9LRaLxf/hfr+/l+vNX4fBhnJ9+Os+lICv
+        cg2TodsN8Ont1ymHCPh+HB8kQ6fdwJZjGzhoAHSVoctOOC4RCDAIusjQYReclwgEGQhNZci2A+pJBAIN
+        hiYyZJoN9SUCwRZAVRmyzIR2EoECi6CKDBlmQXuJQJGFcEqGs2ZAP4lAocVwSIYznoX+EoFiB8AuGd71
+        DIyTCAxwCLwkwzu+C+MlAkMcBH/K8Mx3YB6JwCCHwVMZ7vkM5pMIDHMgbGT42Xswr0RgoEPhIeN1HYnA
+        UAcDAteTCAx2eLieBDC6XPlLwOPfzMfXgMEOB/4Sv//NLvX52HwmvK4jw0CHwuYzwc/eg3llGOZA2EgE
+        7vkM5pNhkMPgqUTgme/APDIMcRD8KRF4x3dhvAwDHAIvSQTe9QyMk6HYAbBLInDGs9BfhkKL4ZBE4KwZ
+        0E+GIgvhlEQgwyxoL0OBRVBFIpBlJrSTIdgCqCoRyDQb6ssQaDA0kQhk2wH1ZAgyEJpKBDrsgvMyBBgE
+        XSQCXXbCcRkOGgBdJQKddsMxmXIoX70NkQh0uwH2f/UG5eBMX4Yek1gsFosJud1+AI8P3dCIPE8xAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
   <data name="pcbConfirmPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAd1JREFUaEPt
@@ -160,20 +174,6 @@
         0LKOw1UCacuvsBz1X2cSJpGk1skJcmnyKaFweaRLIknvwBIULo90SSTpHViCwuWRLokkvQNLULg80iWR
         5Oo7kP03QpLr7oAHxXIhl94BQ+GWgTi1P70G5HJdHZiD3r8Yhbs8ev9iFO7y4N3uZVcg+a9gp9P5t6xW
         P9O0AcJ1INB9AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnExit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAdxJREFUaEPt
-        mW1Kw0AABXsEj+aN9IZ6o7pT5oGBIk2yX5EdCGiSfe8N2l+9LRaLxf/hfr+/l+vNX4fBhnJ9+Os+lICv
-        cg2TodsN8Ont1ymHCPh+HB8kQ6fdwJZjGzhoAHSVoctOOC4RCDAIusjQYReclwgEGQhNZci2A+pJBAIN
-        hiYyZJoN9SUCwRZAVRmyzIR2EoECi6CKDBlmQXuJQJGFcEqGs2ZAP4lAocVwSIYznoX+EoFiB8AuGd71
-        DIyTCAxwCLwkwzu+C+MlAkMcBH/K8Mx3YB6JwCCHwVMZ7vkM5pMIDHMgbGT42Xswr0RgoEPhIeN1HYnA
-        UAcDAteTCAx2eLieBDC6XPlLwOPfzMfXgMEOB/4Sv//NLvX52HwmvK4jw0CHwuYzwc/eg3llGOZA2EgE
-        7vkM5pNhkMPgqUTgme/APDIMcRD8KRF4x3dhvAwDHAIvSQTe9QyMk6HYAbBLInDGs9BfhkKL4ZBE4KwZ
-        0E+GIgvhlEQgwyxoL0OBRVBFIpBlJrSTIdgCqCoRyDQb6ssQaDA0kQhk2wH1ZAgyEJpKBDrsgvMyBBgE
-        XSQCXXbCcRkOGgBdJQKddsMxmXIoX70NkQh0uwH2f/UG5eBMX4Yek1gsFosJud1+AI8P3dCIPE8xAAAA
-        AElFTkSuQmCC
 </value>
   </data>
   <data name="pcbPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -88,6 +88,7 @@ namespace APPR_QuizMester_lj3p1
             // 
             // pnlRegister
             // 
+            this.pnlRegister.Controls.Add(this.btnExit);
             this.pnlRegister.Controls.Add(this.pnlConfirmPassword);
             this.pnlRegister.Controls.Add(this.linkLogin);
             this.pnlRegister.Controls.Add(this.btnRegister);
@@ -193,7 +194,7 @@ namespace APPR_QuizMester_lj3p1
             // 
             this.lblRegister.AutoSize = true;
             this.lblRegister.Font = new System.Drawing.Font("Yu Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegister.Location = new System.Drawing.Point(245, 35);
+            this.lblRegister.Location = new System.Drawing.Point(245, 29);
             this.lblRegister.Name = "lblRegister";
             this.lblRegister.Size = new System.Drawing.Size(152, 43);
             this.lblRegister.TabIndex = 11;
@@ -324,7 +325,6 @@ namespace APPR_QuizMester_lj3p1
             // 
             // pnlLogin
             // 
-            this.pnlLogin.Controls.Add(this.btnExit);
             this.pnlLogin.Controls.Add(this.pnlRegister);
             this.pnlLogin.Controls.Add(this.linkCreateAccount);
             this.pnlLogin.Controls.Add(this.linkForgotPassword);
@@ -347,7 +347,7 @@ namespace APPR_QuizMester_lj3p1
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnExit.Location = new System.Drawing.Point(1064, -2);
+            this.btnExit.Location = new System.Drawing.Point(528, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 35);
             this.btnExit.TabIndex = 12;
