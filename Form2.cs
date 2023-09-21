@@ -16,5 +16,11 @@ namespace APPR_QuizMester_lj3p1
         {
             InitializeComponent();
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            lblQuizQuestion.MaximumSize = new Size(250, 0);
+            lblQuizQuestion.AutoSize = true;
+        }
     }
 }
