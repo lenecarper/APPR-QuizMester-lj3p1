@@ -16,7 +16,7 @@ namespace APPR_QuizMester_lj3p1
         bool mouseDown;
         private Point offset;
         string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
-        // Form2 secondForm = new Form2();
+        Form2 secondForm = new Form2();
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace APPR_QuizMester_lj3p1
         private void Form1_Load(object sender, EventArgs e)
         {
             tmrClearErrors.Start();
+            secondForm.Hide();
         }
 
         private void txbUsername_Click(object sender, EventArgs e)
@@ -52,7 +53,8 @@ namespace APPR_QuizMester_lj3p1
 
             if (txbUsername.Text != "" && txbPassword.Text != "")
             {
-                
+                this.Hide();
+                secondForm.Show();
             }    
 
             /*// Search the database for the given credentials
