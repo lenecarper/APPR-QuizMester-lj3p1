@@ -32,6 +32,7 @@ namespace APPR_QuizMester_lj3p1
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlRegister = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnlConfirmPassword = new System.Windows.Forms.Panel();
             this.lblConfirmPasswordError = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -54,7 +55,6 @@ namespace APPR_QuizMester_lj3p1
             this.lblRegisterUsername = new System.Windows.Forms.Label();
             this.txbRegisterUser = new System.Windows.Forms.TextBox();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.linkCreateAccount = new System.Windows.Forms.LinkLabel();
             this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -99,6 +99,20 @@ namespace APPR_QuizMester_lj3p1
             this.pnlRegister.Name = "pnlRegister";
             this.pnlRegister.Size = new System.Drawing.Size(566, 553);
             this.pnlRegister.TabIndex = 11;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnExit.Location = new System.Drawing.Point(528, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(38, 35);
+            this.btnExit.TabIndex = 12;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pnlConfirmPassword
             // 
@@ -339,20 +353,6 @@ namespace APPR_QuizMester_lj3p1
             this.pnlLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_Event);
             this.pnlLogin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Event);
             this.pnlLogin.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp_Event);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnExit.Location = new System.Drawing.Point(528, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(38, 35);
-            this.btnExit.TabIndex = 12;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // linkCreateAccount
             // 
