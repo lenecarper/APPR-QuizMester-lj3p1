@@ -53,8 +53,33 @@ namespace APPR_QuizMester_lj3p1
 
             if (txbUsername.Text != "" && txbPassword.Text != "")
             {
-                this.Hide();
-                secondForm.Show();
+                string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string username = txbUsername.Text;
+                    string password = txbPassword.Text;
+                    string selectQuery = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
+
+                    using (SqlCommand command = new SqlCommand(selectQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Password", password);
+
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            this.Hide();
+                            secondForm.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Login failed. Please check your credentials.");
+                        }
+                    }
+                }
             }    
 
             /*// Search the database for the given credentials
@@ -103,29 +128,36 @@ namespace APPR_QuizMester_lj3p1
                 lblConfirmPasswordError.Text = "Passwords do not match";
             }
 
-            string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (string.IsNullOrEmpty(txbRegisterUser.Text) || string.IsNullOrEmpty(txbRegisterPassword.Text))
             {
-                connection.Open();
-                string username = txbRegisterUser.Text;
-                string password = txbRegisterPassword.Text;
-                string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
+                lblRegisterUsernameError.Text = "Username cannot be blank or already exists";
+            }
+            else
+            {
+                string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
 
-                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password);
+                    connection.Open();
+                    string username = txbRegisterUser.Text;
+                    string password = txbRegisterPassword.Text;
+                    string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
 
-                    int rowsAffected = command.ExecuteNonQuery();
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Password", password);
 
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Registration successful!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Registration failed.");
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Registration successful!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registration failed.");
+                        }
                     }
                 }
             }
