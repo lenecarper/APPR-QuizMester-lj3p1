@@ -110,7 +110,7 @@ namespace APPR_QuizMester_lj3p1
                 connection.Open();
                 string username = txbRegisterUser.Text;
                 string password = txbRegisterPassword.Text;
-                string insertQuery = "INSERT INTO Users (Id, Username, Password) VALUES (@Id, @Username, @Password)";
+                string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
 
                 using (SqlCommand command = new SqlCommand(insertQuery, connection))
                 {
