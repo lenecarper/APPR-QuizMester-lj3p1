@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.pnlBackground = new System.Windows.Forms.Panel();
-            this.pcbQuizIcon = new System.Windows.Forms.PictureBox();
             this.lblQuizQuestion = new System.Windows.Forms.Label();
+            this.pcbQuizIcon = new System.Windows.Forms.PictureBox();
             this.btnAnswer1 = new System.Windows.Forms.Button();
             this.btnAnswer2 = new System.Windows.Forms.Button();
             this.btnAnswer3 = new System.Windows.Forms.Button();
@@ -66,17 +66,6 @@
             this.pnlBackground.Size = new System.Drawing.Size(597, 140);
             this.pnlBackground.TabIndex = 1;
             // 
-            // pcbQuizIcon
-            // 
-            this.pcbQuizIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pcbQuizIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbQuizIcon.BackgroundImage")));
-            this.pcbQuizIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbQuizIcon.Location = new System.Drawing.Point(0, 0);
-            this.pcbQuizIcon.Name = "pcbQuizIcon";
-            this.pcbQuizIcon.Size = new System.Drawing.Size(110, 140);
-            this.pcbQuizIcon.TabIndex = 0;
-            this.pcbQuizIcon.TabStop = false;
-            // 
             // lblQuizQuestion
             // 
             this.lblQuizQuestion.AutoSize = true;
@@ -88,6 +77,17 @@
             this.lblQuizQuestion.Size = new System.Drawing.Size(150, 25);
             this.lblQuizQuestion.TabIndex = 1;
             this.lblQuizQuestion.Text = "Filler question";
+            // 
+            // pcbQuizIcon
+            // 
+            this.pcbQuizIcon.BackColor = System.Drawing.Color.Transparent;
+            this.pcbQuizIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbQuizIcon.BackgroundImage")));
+            this.pcbQuizIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbQuizIcon.Location = new System.Drawing.Point(0, 0);
+            this.pcbQuizIcon.Name = "pcbQuizIcon";
+            this.pcbQuizIcon.Size = new System.Drawing.Size(110, 140);
+            this.pcbQuizIcon.TabIndex = 0;
+            this.pcbQuizIcon.TabStop = false;
             // 
             // btnAnswer1
             // 
@@ -191,7 +191,7 @@
             this.Controls.Add(this.pcbLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.pnlBackground.ResumeLayout(false);
