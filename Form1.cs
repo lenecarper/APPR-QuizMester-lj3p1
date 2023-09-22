@@ -152,7 +152,7 @@ namespace APPR_QuizMester_lj3p1
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Registration successful!");
+                            MessageBox.Show("Successfully registered, please log in.");
                         }
                         else
                         {
