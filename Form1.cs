@@ -102,6 +102,33 @@ namespace APPR_QuizMester_lj3p1
             {
                 lblConfirmPasswordError.Text = "Passwords do not match";
             }
+
+            string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string username = txbRegisterUser.Text;
+                string password = txbRegisterPassword.Text;
+                string insertQuery = "INSERT INTO Users (Id, Username, Password) VALUES (@Id, @Username, @Password)";
+
+                using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Registration successful!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registration failed.");
+                    }
+                }
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
