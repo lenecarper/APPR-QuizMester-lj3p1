@@ -144,6 +144,16 @@ namespace APPR_QuizMester_lj3p1
             timeLeft--;
             lblTimeLeft.Text = timeLeft.ToString();
             lblScoreIndicator.Text = "";
+            if (timeLeft == 0)
+            {
+                tmrTimeLeft.Stop();
+                MessageBox.Show("Time's up, game over");
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
