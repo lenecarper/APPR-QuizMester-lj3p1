@@ -198,13 +198,14 @@ namespace APPR_QuizMester_lj3p1
 
         private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            tmrDisplayForm.Start();
             pnlLogin.Visible = false;
+            tmrDisplayForm.Start();
         }
 
         private void tmrDisplayForm_Tick(object sender, EventArgs e)
         {
             pnlLogin.Visible = true;
+            tmrDisplayForm.Stop();
         }
     }
 }

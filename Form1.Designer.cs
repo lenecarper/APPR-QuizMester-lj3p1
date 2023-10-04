@@ -542,6 +542,7 @@ namespace APPR_QuizMester_lj3p1
             // tmrDisplayForm
             // 
             this.tmrDisplayForm.Interval = 1000;
+            this.tmrDisplayForm.Tick += new System.EventHandler(this.tmrDisplayForm_Tick);
             // 
             // Form1
             // 
