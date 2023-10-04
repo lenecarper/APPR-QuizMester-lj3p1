@@ -47,6 +47,8 @@
             this.tmrTimeLeft = new System.Windows.Forms.Timer(this.components);
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlQuizFinished = new System.Windows.Forms.Panel();
+            this.lblFinalScore = new System.Windows.Forms.Label();
+            this.btnResetQuiz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -234,7 +236,7 @@
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnExit.Location = new System.Drawing.Point(1063, 0);
+            this.btnExit.Location = new System.Drawing.Point(1052, 0);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(38, 35);
             this.btnExit.TabIndex = 23;
@@ -245,6 +247,7 @@
             // 
             this.pnlQuizFinished.Controls.Add(this.pcbLogo);
             this.pnlQuizFinished.Controls.Add(this.lblTimeLeft);
+            this.pnlQuizFinished.Controls.Add(this.btnExit);
             this.pnlQuizFinished.Controls.Add(this.lblCurrentScoreHolder);
             this.pnlQuizFinished.Controls.Add(this.lblTimeLeftHolder);
             this.pnlQuizFinished.Controls.Add(this.lblScoreIndicator);
@@ -255,10 +258,39 @@
             this.pnlQuizFinished.Controls.Add(this.rbOption3);
             this.pnlQuizFinished.Controls.Add(this.rbOption1);
             this.pnlQuizFinished.Controls.Add(this.rbOption2);
-            this.pnlQuizFinished.Location = new System.Drawing.Point(12, 12);
+            this.pnlQuizFinished.Location = new System.Drawing.Point(662, 383);
             this.pnlQuizFinished.Name = "pnlQuizFinished";
-            this.pnlQuizFinished.Size = new System.Drawing.Size(1089, 551);
+            this.pnlQuizFinished.Size = new System.Drawing.Size(1092, 560);
             this.pnlQuizFinished.TabIndex = 24;
+            // 
+            // lblFinalScore
+            // 
+            this.lblFinalScore.AutoSize = true;
+            this.lblFinalScore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblFinalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFinalScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblFinalScore.Location = new System.Drawing.Point(445, 91);
+            this.lblFinalScore.Name = "lblFinalScore";
+            this.lblFinalScore.Size = new System.Drawing.Size(156, 42);
+            this.lblFinalScore.TabIndex = 25;
+            this.lblFinalScore.Text = "SCORE";
+            // 
+            // btnResetQuiz
+            // 
+            this.btnResetQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResetQuiz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnResetQuiz.FlatAppearance.BorderSize = 2;
+            this.btnResetQuiz.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnResetQuiz.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btnResetQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetQuiz.ForeColor = System.Drawing.Color.White;
+            this.btnResetQuiz.Location = new System.Drawing.Point(435, 303);
+            this.btnResetQuiz.Name = "btnResetQuiz";
+            this.btnResetQuiz.Size = new System.Drawing.Size(282, 74);
+            this.btnResetQuiz.TabIndex = 26;
+            this.btnResetQuiz.Text = "Save and Restart";
+            this.btnResetQuiz.UseVisualStyleBackColor = true;
+            this.btnResetQuiz.Click += new System.EventHandler(this.btnResetQuiz_Click);
             // 
             // Form2
             // 
@@ -266,8 +298,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1099, 572);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.pnlQuizFinished);
+            this.Controls.Add(this.lblFinalScore);
+            this.Controls.Add(this.btnResetQuiz);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = " ";
@@ -279,6 +312,7 @@
             this.pnlQuizFinished.ResumeLayout(false);
             this.pnlQuizFinished.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -301,5 +335,7 @@
         private System.Windows.Forms.Timer tmrTimeLeft;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel pnlQuizFinished;
+        private System.Windows.Forms.Label lblFinalScore;
+        private System.Windows.Forms.Button btnResetQuiz;
     }
 }

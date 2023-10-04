@@ -14,7 +14,7 @@ namespace APPR_QuizMester_lj3p1
     public partial class Form2 : Form
     {
         int currentScore = 0;
-        int timeLeft = 120;
+        int timeLeft = 10;
         private List<Question> questions = new List<Question>();
         private int currentQuestionIndex = 0;
         public Form2()
@@ -148,12 +148,19 @@ namespace APPR_QuizMester_lj3p1
             {
                 tmrTimeLeft.Stop();
                 MessageBox.Show("Time's up, game over");
+                pnlQuizFinished.Visible = false;
+                lblFinalScore.Text = "Final score: " + currentScore.ToString();
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnResetQuiz_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
