@@ -111,12 +111,17 @@ namespace APPR_QuizMester_lj3p1
 
                 // Move to the next question
                 currentQuestionIndex++;
+                ClearSelection();
                 DisplayQuestion();
             }
             else
             {
                 MessageBox.Show("Please select an answer!");
             }
+        }
+        private void ClearSelection()
+        {
+            rbOption1.Checked = rbOption2.Checked = rbOption3.Checked = rbOption4.Checked = false;
         }
     }
 }
