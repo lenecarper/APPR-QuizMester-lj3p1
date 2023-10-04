@@ -19,11 +19,13 @@ namespace APPR_QuizMester_lj3p1
         int wrongAnswers = 0;
         private List<Question> questions = new List<Question>();
         private int currentQuestionIndex = 0;
-        public Form2()
+        private string _username;
+        public Form2(string username)
         {
             InitializeComponent();
             LoadQuestionsFromDatabase();
             DisplayQuestion();
+            _username = username;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -154,6 +156,7 @@ namespace APPR_QuizMester_lj3p1
                 tmrTimeLeft.Stop();
                 MessageBox.Show("Time's up, game over");
                 pnlQuizFinished.Visible = false;
+                lblUsername.Text = _username + "'s score";
                 lblFinalScore.Text = "Final score: " + currentScore.ToString();
                 lblCorrectAnswers.Text = "Correct answers: " + correctAnswers.ToString();
                 lblWrongAnswers.Text = "Wrong answers: " + wrongAnswers.ToString();

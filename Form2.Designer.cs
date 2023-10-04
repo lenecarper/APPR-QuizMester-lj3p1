@@ -51,10 +51,14 @@
             this.btnFinishQuiz = new System.Windows.Forms.Button();
             this.lblCorrectAnswers = new System.Windows.Forms.Label();
             this.lblWrongAnswers = new System.Windows.Forms.Label();
+            this.pnlLeaderboard = new System.Windows.Forms.Panel();
+            this.rtbLeaderboard = new System.Windows.Forms.RichTextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
             this.pnlQuizFinished.SuspendLayout();
+            this.pnlLeaderboard.SuspendLayout();
             this.SuspendLayout();
             // 
             // pcbLogo
@@ -271,7 +275,7 @@
             this.lblFinalScore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblFinalScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFinalScore.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblFinalScore.Location = new System.Drawing.Point(445, 91);
+            this.lblFinalScore.Location = new System.Drawing.Point(748, 87);
             this.lblFinalScore.Name = "lblFinalScore";
             this.lblFinalScore.Size = new System.Drawing.Size(256, 42);
             this.lblFinalScore.TabIndex = 25;
@@ -286,7 +290,7 @@
             this.btnFinishQuiz.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
             this.btnFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinishQuiz.ForeColor = System.Drawing.Color.White;
-            this.btnFinishQuiz.Location = new System.Drawing.Point(401, 363);
+            this.btnFinishQuiz.Location = new System.Drawing.Point(722, 359);
             this.btnFinishQuiz.Name = "btnFinishQuiz";
             this.btnFinishQuiz.Size = new System.Drawing.Size(282, 74);
             this.btnFinishQuiz.TabIndex = 26;
@@ -300,7 +304,7 @@
             this.lblCorrectAnswers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCorrectAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorrectAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblCorrectAnswers.Location = new System.Drawing.Point(394, 155);
+            this.lblCorrectAnswers.Location = new System.Drawing.Point(697, 151);
             this.lblCorrectAnswers.Name = "lblCorrectAnswers";
             this.lblCorrectAnswers.Size = new System.Drawing.Size(349, 42);
             this.lblCorrectAnswers.TabIndex = 27;
@@ -312,11 +316,42 @@
             this.lblWrongAnswers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblWrongAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWrongAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblWrongAnswers.Location = new System.Drawing.Point(394, 226);
+            this.lblWrongAnswers.Location = new System.Drawing.Point(697, 222);
             this.lblWrongAnswers.Name = "lblWrongAnswers";
             this.lblWrongAnswers.Size = new System.Drawing.Size(335, 42);
             this.lblWrongAnswers.TabIndex = 28;
             this.lblWrongAnswers.Text = "Wrong answers: 0";
+            // 
+            // pnlLeaderboard
+            // 
+            this.pnlLeaderboard.Controls.Add(this.rtbLeaderboard);
+            this.pnlLeaderboard.Location = new System.Drawing.Point(12, 12);
+            this.pnlLeaderboard.Name = "pnlLeaderboard";
+            this.pnlLeaderboard.Size = new System.Drawing.Size(401, 548);
+            this.pnlLeaderboard.TabIndex = 29;
+            // 
+            // rtbLeaderboard
+            // 
+            this.rtbLeaderboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rtbLeaderboard.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbLeaderboard.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.rtbLeaderboard.Location = new System.Drawing.Point(10, 10);
+            this.rtbLeaderboard.Name = "rtbLeaderboard";
+            this.rtbLeaderboard.Size = new System.Drawing.Size(380, 529);
+            this.rtbLeaderboard.TabIndex = 30;
+            this.rtbLeaderboard.Text = "";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblUsername.Location = new System.Drawing.Point(774, 22);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(198, 42);
+            this.lblUsername.TabIndex = 30;
+            this.lblUsername.Text = "Username";
             // 
             // Form2
             // 
@@ -325,10 +360,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1099, 572);
             this.Controls.Add(this.pnlQuizFinished);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblFinalScore);
             this.Controls.Add(this.btnFinishQuiz);
             this.Controls.Add(this.lblCorrectAnswers);
             this.Controls.Add(this.lblWrongAnswers);
+            this.Controls.Add(this.pnlLeaderboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = " ";
@@ -339,6 +376,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).EndInit();
             this.pnlQuizFinished.ResumeLayout(false);
             this.pnlQuizFinished.PerformLayout();
+            this.pnlLeaderboard.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +405,8 @@
         private System.Windows.Forms.Button btnFinishQuiz;
         private System.Windows.Forms.Label lblCorrectAnswers;
         private System.Windows.Forms.Label lblWrongAnswers;
+        private System.Windows.Forms.Panel pnlLeaderboard;
+        private System.Windows.Forms.RichTextBox rtbLeaderboard;
+        private System.Windows.Forms.Label lblUsername;
     }
 }
