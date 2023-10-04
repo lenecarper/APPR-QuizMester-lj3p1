@@ -15,6 +15,8 @@ namespace APPR_QuizMester_lj3p1
     {
         int currentScore = 0;
         int timeLeft = 10;
+        int correctAnswers = 0;
+        int wrongAnswers = 0;
         private List<Question> questions = new List<Question>();
         private int currentQuestionIndex = 0;
         public Form2()
@@ -114,6 +116,7 @@ namespace APPR_QuizMester_lj3p1
                     lblCurrentScore.Text = currentScore.ToString();
                     lblScoreIndicator.Text = "+15";
                     lblScoreIndicator.ForeColor = Color.Green;
+                    correctAnswers += 1;
                 }
                 else
                 {
@@ -122,6 +125,7 @@ namespace APPR_QuizMester_lj3p1
                     lblCurrentScore.Text = currentScore.ToString();
                     lblScoreIndicator.Text = "-25";
                     lblScoreIndicator.ForeColor = Color.Red;
+                    wrongAnswers += 1;
                 }
 
                 // Move to the next question
@@ -134,6 +138,7 @@ namespace APPR_QuizMester_lj3p1
                 MessageBox.Show("Please select an answer!");
             }
         }
+
         private void ClearSelection()
         {
             rbOption1.Checked = rbOption2.Checked = rbOption3.Checked = rbOption4.Checked = false;
@@ -150,6 +155,8 @@ namespace APPR_QuizMester_lj3p1
                 MessageBox.Show("Time's up, game over");
                 pnlQuizFinished.Visible = false;
                 lblFinalScore.Text = "Final score: " + currentScore.ToString();
+                lblCorrectAnswers.Text = "Correct answers: " + correctAnswers.ToString();
+                lblWrongAnswers.Text = "Wrong answers: " + wrongAnswers.ToString();
             }
         }
 

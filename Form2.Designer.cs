@@ -260,7 +260,7 @@
             this.pnlQuizFinished.Controls.Add(this.rbOption3);
             this.pnlQuizFinished.Controls.Add(this.rbOption1);
             this.pnlQuizFinished.Controls.Add(this.rbOption2);
-            this.pnlQuizFinished.Location = new System.Drawing.Point(662, 383);
+            this.pnlQuizFinished.Location = new System.Drawing.Point(0, 0);
             this.pnlQuizFinished.Name = "pnlQuizFinished";
             this.pnlQuizFinished.Size = new System.Drawing.Size(1092, 560);
             this.pnlQuizFinished.TabIndex = 24;
@@ -324,11 +324,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1099, 572);
-            this.Controls.Add(this.lblWrongAnswers);
-            this.Controls.Add(this.lblCorrectAnswers);
             this.Controls.Add(this.pnlQuizFinished);
             this.Controls.Add(this.lblFinalScore);
             this.Controls.Add(this.btnFinishQuiz);
+            this.Controls.Add(this.lblCorrectAnswers);
+            this.Controls.Add(this.lblWrongAnswers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = " ";
