@@ -48,7 +48,9 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlQuizFinished = new System.Windows.Forms.Panel();
             this.lblFinalScore = new System.Windows.Forms.Label();
-            this.btnResetQuiz = new System.Windows.Forms.Button();
+            this.btnFinishQuiz = new System.Windows.Forms.Button();
+            this.lblCorrectAnswers = new System.Windows.Forms.Label();
+            this.lblWrongAnswers = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -275,22 +277,46 @@
             this.lblFinalScore.TabIndex = 25;
             this.lblFinalScore.Text = "SCORE";
             // 
-            // btnResetQuiz
+            // btnFinishQuiz
             // 
-            this.btnResetQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResetQuiz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnResetQuiz.FlatAppearance.BorderSize = 2;
-            this.btnResetQuiz.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnResetQuiz.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
-            this.btnResetQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetQuiz.ForeColor = System.Drawing.Color.White;
-            this.btnResetQuiz.Location = new System.Drawing.Point(435, 303);
-            this.btnResetQuiz.Name = "btnResetQuiz";
-            this.btnResetQuiz.Size = new System.Drawing.Size(282, 74);
-            this.btnResetQuiz.TabIndex = 26;
-            this.btnResetQuiz.Text = "Save and Restart";
-            this.btnResetQuiz.UseVisualStyleBackColor = true;
-            this.btnResetQuiz.Click += new System.EventHandler(this.btnResetQuiz_Click);
+            this.btnFinishQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFinishQuiz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnFinishQuiz.FlatAppearance.BorderSize = 2;
+            this.btnFinishQuiz.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnFinishQuiz.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btnFinishQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinishQuiz.ForeColor = System.Drawing.Color.White;
+            this.btnFinishQuiz.Location = new System.Drawing.Point(401, 363);
+            this.btnFinishQuiz.Name = "btnFinishQuiz";
+            this.btnFinishQuiz.Size = new System.Drawing.Size(282, 74);
+            this.btnFinishQuiz.TabIndex = 26;
+            this.btnFinishQuiz.Text = "Save and Restart";
+            this.btnFinishQuiz.UseVisualStyleBackColor = true;
+            this.btnFinishQuiz.Click += new System.EventHandler(this.btnResetQuiz_Click);
+            // 
+            // lblCorrectAnswers
+            // 
+            this.lblCorrectAnswers.AutoSize = true;
+            this.lblCorrectAnswers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblCorrectAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCorrectAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblCorrectAnswers.Location = new System.Drawing.Point(445, 160);
+            this.lblCorrectAnswers.Name = "lblCorrectAnswers";
+            this.lblCorrectAnswers.Size = new System.Drawing.Size(417, 42);
+            this.lblCorrectAnswers.TabIndex = 27;
+            this.lblCorrectAnswers.Text = "CORRECT ANSWERS";
+            // 
+            // lblWrongAnswers
+            // 
+            this.lblWrongAnswers.AutoSize = true;
+            this.lblWrongAnswers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblWrongAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWrongAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblWrongAnswers.Location = new System.Drawing.Point(445, 231);
+            this.lblWrongAnswers.Name = "lblWrongAnswers";
+            this.lblWrongAnswers.Size = new System.Drawing.Size(377, 42);
+            this.lblWrongAnswers.TabIndex = 28;
+            this.lblWrongAnswers.Text = "WRONG ANSWERS";
             // 
             // Form2
             // 
@@ -298,9 +324,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1099, 572);
+            this.Controls.Add(this.lblWrongAnswers);
+            this.Controls.Add(this.lblCorrectAnswers);
             this.Controls.Add(this.pnlQuizFinished);
             this.Controls.Add(this.lblFinalScore);
-            this.Controls.Add(this.btnResetQuiz);
+            this.Controls.Add(this.btnFinishQuiz);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = " ";
@@ -336,6 +364,8 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel pnlQuizFinished;
         private System.Windows.Forms.Label lblFinalScore;
-        private System.Windows.Forms.Button btnResetQuiz;
+        private System.Windows.Forms.Button btnFinishQuiz;
+        private System.Windows.Forms.Label lblCorrectAnswers;
+        private System.Windows.Forms.Label lblWrongAnswers;
     }
 }

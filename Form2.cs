@@ -160,7 +160,7 @@ namespace APPR_QuizMester_lj3p1
 
         private void btnResetQuiz_Click(object sender, EventArgs e)
         {
-            
+            Application.Exit();
         }
     }
 }
