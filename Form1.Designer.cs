@@ -71,6 +71,8 @@ namespace APPR_QuizMester_lj3p1
             this.txbUsername = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.tmrClearErrors = new System.Windows.Forms.Timer(this.components);
+            this.pcbForgotPassword = new System.Windows.Forms.PictureBox();
+            this.tmrDisplayForm = new System.Windows.Forms.Timer(this.components);
             this.pnlLogin.SuspendLayout();
             this.pnlConfirmPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmPassword)).BeginInit();
@@ -82,6 +84,7 @@ namespace APPR_QuizMester_lj3p1
             ((System.ComponentModel.ISupportInitialize)(this.pcbRegisterUsername)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbUsername)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbForgotPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLogin
@@ -99,9 +102,9 @@ namespace APPR_QuizMester_lj3p1
             this.pnlLogin.Controls.Add(this.pnlRegisterUser);
             this.pnlLogin.Controls.Add(this.panel1);
             this.pnlLogin.Controls.Add(this.lblLogin);
-            this.pnlLogin.Location = new System.Drawing.Point(8, -4);
+            this.pnlLogin.Location = new System.Drawing.Point(-1, -1);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(1102, 569);
+            this.pnlLogin.Size = new System.Drawing.Size(1125, 562);
             this.pnlLogin.TabIndex = 2;
             this.pnlLogin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_Event);
             this.pnlLogin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Event);
@@ -218,6 +221,7 @@ namespace APPR_QuizMester_lj3p1
             this.linkForgotPassword.TabStop = true;
             this.linkForgotPassword.Text = "Forgot your password?";
             this.linkForgotPassword.VisitedLinkColor = System.Drawing.Color.Yellow;
+            this.linkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkForgotPassword_LinkClicked);
             // 
             // btnRegister
             // 
@@ -524,6 +528,21 @@ namespace APPR_QuizMester_lj3p1
             this.tmrClearErrors.Interval = 3000;
             this.tmrClearErrors.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pcbForgotPassword
+            // 
+            this.pcbForgotPassword.BackColor = System.Drawing.Color.Transparent;
+            this.pcbForgotPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbForgotPassword.BackgroundImage")));
+            this.pcbForgotPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbForgotPassword.Location = new System.Drawing.Point(-1, -1);
+            this.pcbForgotPassword.Name = "pcbForgotPassword";
+            this.pcbForgotPassword.Size = new System.Drawing.Size(1125, 557);
+            this.pcbForgotPassword.TabIndex = 17;
+            this.pcbForgotPassword.TabStop = false;
+            // 
+            // tmrDisplayForm
+            // 
+            this.tmrDisplayForm.Interval = 1000;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -531,6 +550,7 @@ namespace APPR_QuizMester_lj3p1
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1118, 564);
             this.Controls.Add(this.pnlLogin);
+            this.Controls.Add(this.pcbForgotPassword);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -554,6 +574,7 @@ namespace APPR_QuizMester_lj3p1
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbUsername)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbForgotPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -599,6 +620,8 @@ namespace APPR_QuizMester_lj3p1
         private System.Windows.Forms.PictureBox pcbRegisterUsername;
         private System.Windows.Forms.Label lblRegisterUsername;
         private System.Windows.Forms.TextBox txbRegisterUser;
+        private System.Windows.Forms.PictureBox pcbForgotPassword;
+        private System.Windows.Forms.Timer tmrDisplayForm;
     }
 }
 

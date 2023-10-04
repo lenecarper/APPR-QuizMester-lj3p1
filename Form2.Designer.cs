@@ -290,7 +290,7 @@
             this.btnFinishQuiz.Name = "btnFinishQuiz";
             this.btnFinishQuiz.Size = new System.Drawing.Size(282, 74);
             this.btnFinishQuiz.TabIndex = 26;
-            this.btnFinishQuiz.Text = "Save and Restart";
+            this.btnFinishQuiz.Text = "SAVE AND EXIT";
             this.btnFinishQuiz.UseVisualStyleBackColor = true;
             this.btnFinishQuiz.Click += new System.EventHandler(this.btnResetQuiz_Click);
             // 
@@ -300,7 +300,7 @@
             this.lblCorrectAnswers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblCorrectAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorrectAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblCorrectAnswers.Location = new System.Drawing.Point(445, 160);
+            this.lblCorrectAnswers.Location = new System.Drawing.Point(336, 154);
             this.lblCorrectAnswers.Name = "lblCorrectAnswers";
             this.lblCorrectAnswers.Size = new System.Drawing.Size(417, 42);
             this.lblCorrectAnswers.TabIndex = 27;
@@ -312,7 +312,7 @@
             this.lblWrongAnswers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lblWrongAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWrongAnswers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblWrongAnswers.Location = new System.Drawing.Point(445, 231);
+            this.lblWrongAnswers.Location = new System.Drawing.Point(356, 224);
             this.lblWrongAnswers.Name = "lblWrongAnswers";
             this.lblWrongAnswers.Size = new System.Drawing.Size(377, 42);
             this.lblWrongAnswers.TabIndex = 28;

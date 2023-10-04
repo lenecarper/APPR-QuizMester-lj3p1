@@ -81,29 +81,6 @@ namespace APPR_QuizMester_lj3p1
                     }
                 }
             }    
-
-            /*// Search the database for the given credentials
-            using (SqlConnection cn = new SqlConnection(connectionString))
-            {
-                // Check if there is a database connection open
-                if (cn.State == ConnectionState.Closed)
-                {
-                    // Open a database connection if one cannot be found
-                    cn.Open();
-                }
-
-                // Datatable with the name dt checking for users
-                using (DataTable dt = new DataTable("Users"))
-                {
-                    using (SqlCommand cmd = new SqlCommand("Select * from Users where Username = @Username;"))
-                    {
-                        cmd.Parameters.AddWithValue("Username", txbUsername.Text);
-                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                        adapter.Fill(dt);
-                        // lblLogin.Text = dt.ToString();
-                    }
-                }
-            }*/
         }
 
         private void txbPassword_TextChanged(object sender, EventArgs e)
@@ -217,6 +194,17 @@ namespace APPR_QuizMester_lj3p1
         private void MouseUp_Event(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            tmrDisplayForm.Start();
+            pnlLogin.Visible = false;
+        }
+
+        private void tmrDisplayForm_Tick(object sender, EventArgs e)
+        {
+            pnlLogin.Visible = true;
         }
     }
 }
