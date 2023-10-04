@@ -79,15 +79,43 @@ namespace APPR_QuizMester_lj3p1
             {
                 Question question = questions[currentQuestionIndex];
                 lblQuizQuestion.Text = question.Text;
-                btnAnswer1.Text = question.Options[0];
-                btnAnswer2.Text = question.Options[1];
-                btnAnswer3.Text = question.Options[2];
-                btnAnswer4.Text = question.Options[3];
+                rbOption1.Text = question.Options[0];
+                rbOption2.Text = question.Options[1];
+                rbOption3.Text = question.Options[2];
+                rbOption4.Text = question.Options[3];
             }
             else
             {
                 MessageBox.Show("Quiz completed!");
                 // Handle quiz completion, e.g., show results or navigate to another form
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            // Check the selected answer and move to the next question
+            if (rbOption1.Checked || rbOption2.Checked || rbOption3.Checked || rbOption4.Checked)
+            {
+                string selectedAnswer = rbOption1.Checked ? rbOption1.Text :
+                                       rbOption2.Checked ? rbOption2.Text :
+                                       rbOption3.Checked ? rbOption3.Text : rbOption4.Text;
+
+                if (selectedAnswer == questions[currentQuestionIndex].CorrectAnswer)
+                {
+                    // Handle correct answer logic if needed
+                }
+                else
+                {
+                    // Handle wrong answer logic if needed
+                }
+
+                // Move to the next question
+                currentQuestionIndex++;
+                DisplayQuestion();
+            }
+            else
+            {
+                MessageBox.Show("Please select an answer!");
             }
         }
     }

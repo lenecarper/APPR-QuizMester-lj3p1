@@ -33,12 +33,13 @@
             this.pnlBackground = new System.Windows.Forms.Panel();
             this.lblQuizQuestion = new System.Windows.Forms.Label();
             this.pcbQuizIcon = new System.Windows.Forms.PictureBox();
-            this.btnAnswer1 = new System.Windows.Forms.Button();
-            this.btnAnswer2 = new System.Windows.Forms.Button();
-            this.btnAnswer3 = new System.Windows.Forms.Button();
-            this.btnAnswer4 = new System.Windows.Forms.Button();
             this.lblCurrentScoreHolder = new System.Windows.Forms.Label();
             this.lblCurrentScore = new System.Windows.Forms.Label();
+            this.rbOption1 = new System.Windows.Forms.RadioButton();
+            this.rbOption2 = new System.Windows.Forms.RadioButton();
+            this.rbOption3 = new System.Windows.Forms.RadioButton();
+            this.rbOption4 = new System.Windows.Forms.RadioButton();
+            this.btnNext = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -89,70 +90,6 @@
             this.pcbQuizIcon.TabIndex = 0;
             this.pcbQuizIcon.TabStop = false;
             // 
-            // btnAnswer1
-            // 
-            this.btnAnswer1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnswer1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnAnswer1.FlatAppearance.BorderSize = 2;
-            this.btnAnswer1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAnswer1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
-            this.btnAnswer1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnswer1.ForeColor = System.Drawing.Color.White;
-            this.btnAnswer1.Location = new System.Drawing.Point(370, 259);
-            this.btnAnswer1.Name = "btnAnswer1";
-            this.btnAnswer1.Size = new System.Drawing.Size(282, 74);
-            this.btnAnswer1.TabIndex = 9;
-            this.btnAnswer1.Text = "Filler answer 1";
-            this.btnAnswer1.UseVisualStyleBackColor = true;
-            // 
-            // btnAnswer2
-            // 
-            this.btnAnswer2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnswer2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnAnswer2.FlatAppearance.BorderSize = 2;
-            this.btnAnswer2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAnswer2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
-            this.btnAnswer2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnswer2.ForeColor = System.Drawing.Color.White;
-            this.btnAnswer2.Location = new System.Drawing.Point(685, 259);
-            this.btnAnswer2.Name = "btnAnswer2";
-            this.btnAnswer2.Size = new System.Drawing.Size(282, 74);
-            this.btnAnswer2.TabIndex = 10;
-            this.btnAnswer2.Text = "Filler answer 2";
-            this.btnAnswer2.UseVisualStyleBackColor = true;
-            // 
-            // btnAnswer3
-            // 
-            this.btnAnswer3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnswer3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnAnswer3.FlatAppearance.BorderSize = 2;
-            this.btnAnswer3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAnswer3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
-            this.btnAnswer3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnswer3.ForeColor = System.Drawing.Color.White;
-            this.btnAnswer3.Location = new System.Drawing.Point(370, 355);
-            this.btnAnswer3.Name = "btnAnswer3";
-            this.btnAnswer3.Size = new System.Drawing.Size(282, 74);
-            this.btnAnswer3.TabIndex = 11;
-            this.btnAnswer3.Text = "Filler answer 3";
-            this.btnAnswer3.UseVisualStyleBackColor = true;
-            // 
-            // btnAnswer4
-            // 
-            this.btnAnswer4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAnswer4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnAnswer4.FlatAppearance.BorderSize = 2;
-            this.btnAnswer4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAnswer4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
-            this.btnAnswer4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnswer4.ForeColor = System.Drawing.Color.White;
-            this.btnAnswer4.Location = new System.Drawing.Point(685, 355);
-            this.btnAnswer4.Name = "btnAnswer4";
-            this.btnAnswer4.Size = new System.Drawing.Size(282, 74);
-            this.btnAnswer4.TabIndex = 12;
-            this.btnAnswer4.Text = "Filler answer 4";
-            this.btnAnswer4.UseVisualStyleBackColor = true;
-            // 
             // lblCurrentScoreHolder
             // 
             this.lblCurrentScoreHolder.AutoSize = true;
@@ -175,18 +112,88 @@
             this.lblCurrentScore.TabIndex = 14;
             this.lblCurrentScore.Text = "0";
             // 
+            // rbOption1
+            // 
+            this.rbOption1.AutoSize = true;
+            this.rbOption1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOption1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.rbOption1.Location = new System.Drawing.Point(431, 268);
+            this.rbOption1.Name = "rbOption1";
+            this.rbOption1.Size = new System.Drawing.Size(149, 40);
+            this.rbOption1.TabIndex = 15;
+            this.rbOption1.TabStop = true;
+            this.rbOption1.Text = "Option 1";
+            this.rbOption1.UseVisualStyleBackColor = true;
+            // 
+            // rbOption2
+            // 
+            this.rbOption2.AutoSize = true;
+            this.rbOption2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOption2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.rbOption2.Location = new System.Drawing.Point(771, 268);
+            this.rbOption2.Name = "rbOption2";
+            this.rbOption2.Size = new System.Drawing.Size(149, 40);
+            this.rbOption2.TabIndex = 16;
+            this.rbOption2.TabStop = true;
+            this.rbOption2.Text = "Option 2";
+            this.rbOption2.UseVisualStyleBackColor = true;
+            // 
+            // rbOption3
+            // 
+            this.rbOption3.AutoSize = true;
+            this.rbOption3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOption3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.rbOption3.Location = new System.Drawing.Point(431, 353);
+            this.rbOption3.Name = "rbOption3";
+            this.rbOption3.Size = new System.Drawing.Size(149, 40);
+            this.rbOption3.TabIndex = 17;
+            this.rbOption3.TabStop = true;
+            this.rbOption3.Text = "Option 3";
+            this.rbOption3.UseVisualStyleBackColor = true;
+            // 
+            // rbOption4
+            // 
+            this.rbOption4.AutoSize = true;
+            this.rbOption4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbOption4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.rbOption4.Location = new System.Drawing.Point(771, 353);
+            this.rbOption4.Name = "rbOption4";
+            this.rbOption4.Size = new System.Drawing.Size(149, 40);
+            this.rbOption4.TabIndex = 18;
+            this.rbOption4.TabStop = true;
+            this.rbOption4.Text = "Option 4";
+            this.rbOption4.UseVisualStyleBackColor = true;
+            // 
+            // btnNext
+            // 
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnNext.FlatAppearance.BorderSize = 2;
+            this.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNext.ForeColor = System.Drawing.Color.White;
+            this.btnNext.Location = new System.Drawing.Point(533, 451);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(282, 74);
+            this.btnNext.TabIndex = 19;
+            this.btnNext.Text = "Confirm";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1099, 572);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.rbOption4);
+            this.Controls.Add(this.rbOption3);
+            this.Controls.Add(this.rbOption2);
+            this.Controls.Add(this.rbOption1);
             this.Controls.Add(this.lblCurrentScore);
             this.Controls.Add(this.lblCurrentScoreHolder);
-            this.Controls.Add(this.btnAnswer4);
-            this.Controls.Add(this.btnAnswer3);
-            this.Controls.Add(this.btnAnswer2);
-            this.Controls.Add(this.btnAnswer1);
             this.Controls.Add(this.pnlBackground);
             this.Controls.Add(this.pcbLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -208,11 +215,12 @@
         private System.Windows.Forms.Panel pnlBackground;
         private System.Windows.Forms.PictureBox pcbQuizIcon;
         private System.Windows.Forms.Label lblQuizQuestion;
-        private System.Windows.Forms.Button btnAnswer1;
-        private System.Windows.Forms.Button btnAnswer2;
-        private System.Windows.Forms.Button btnAnswer3;
-        private System.Windows.Forms.Button btnAnswer4;
         private System.Windows.Forms.Label lblCurrentScoreHolder;
         private System.Windows.Forms.Label lblCurrentScore;
+        private System.Windows.Forms.RadioButton rbOption1;
+        private System.Windows.Forms.RadioButton rbOption2;
+        private System.Windows.Forms.RadioButton rbOption3;
+        private System.Windows.Forms.RadioButton rbOption4;
+        private System.Windows.Forms.Button btnNext;
     }
 }
