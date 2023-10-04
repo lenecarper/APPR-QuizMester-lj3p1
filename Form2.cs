@@ -13,6 +13,8 @@ namespace APPR_QuizMester_lj3p1
 {
     public partial class Form2 : Form
     {
+        int currentScore = 0;
+        int timeLeft = 120;
         private List<Question> questions = new List<Question>();
         private int currentQuestionIndex = 0;
         public Form2()
@@ -26,6 +28,10 @@ namespace APPR_QuizMester_lj3p1
         {
             lblQuizQuestion.MaximumSize = new Size(250, 0);
             lblQuizQuestion.AutoSize = true;
+            lblCurrentScore.Text = currentScore.ToString();
+            ClearSelection();
+            lblScoreIndicator.Text = "";
+            lblTimeLeft.Text = timeLeft.ToString();
         }
 
         private void LoadQuestionsFromDatabase()
@@ -96,6 +102,7 @@ namespace APPR_QuizMester_lj3p1
             // Check the selected answer and move to the next question
             if (rbOption1.Checked || rbOption2.Checked || rbOption3.Checked || rbOption4.Checked)
             {
+                tmrTimeLeft.Start();
                 string selectedAnswer = rbOption1.Checked ? rbOption1.Text :
                                        rbOption2.Checked ? rbOption2.Text :
                                        rbOption3.Checked ? rbOption3.Text : rbOption4.Text;
@@ -103,10 +110,18 @@ namespace APPR_QuizMester_lj3p1
                 if (selectedAnswer == questions[currentQuestionIndex].CorrectAnswer)
                 {
                     // Handle correct answer logic if needed
+                    currentScore += 15;
+                    lblCurrentScore.Text = currentScore.ToString();
+                    lblScoreIndicator.Text = "+15";
+                    lblScoreIndicator.ForeColor = Color.Green;
                 }
                 else
                 {
                     // Handle wrong answer logic if needed
+                    currentScore -= 25;
+                    lblCurrentScore.Text = currentScore.ToString();
+                    lblScoreIndicator.Text = "-25";
+                    lblScoreIndicator.ForeColor = Color.Red;
                 }
 
                 // Move to the next question
@@ -122,6 +137,13 @@ namespace APPR_QuizMester_lj3p1
         private void ClearSelection()
         {
             rbOption1.Checked = rbOption2.Checked = rbOption3.Checked = rbOption4.Checked = false;
+        }
+
+        private void tmrTimeLeft_Tick(object sender, EventArgs e)
+        {
+            timeLeft--;
+            lblTimeLeft.Text = timeLeft.ToString();
+            lblScoreIndicator.Text = "";
         }
     }
 }

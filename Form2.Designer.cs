@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.pnlBackground = new System.Windows.Forms.Panel();
@@ -40,6 +41,10 @@
             this.rbOption3 = new System.Windows.Forms.RadioButton();
             this.rbOption4 = new System.Windows.Forms.RadioButton();
             this.btnNext = new System.Windows.Forms.Button();
+            this.lblTimeLeftHolder = new System.Windows.Forms.Label();
+            this.lblScoreIndicator = new System.Windows.Forms.Label();
+            this.lblTimeLeft = new System.Windows.Forms.Label();
+            this.tmrTimeLeft = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -181,12 +186,53 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // lblTimeLeftHolder
+            // 
+            this.lblTimeLeftHolder.AutoSize = true;
+            this.lblTimeLeftHolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeLeftHolder.ForeColor = System.Drawing.Color.White;
+            this.lblTimeLeftHolder.Location = new System.Drawing.Point(11, 531);
+            this.lblTimeLeftHolder.Name = "lblTimeLeftHolder";
+            this.lblTimeLeftHolder.Size = new System.Drawing.Size(131, 32);
+            this.lblTimeLeftHolder.TabIndex = 20;
+            this.lblTimeLeftHolder.Text = "Time left:";
+            // 
+            // lblScoreIndicator
+            // 
+            this.lblScoreIndicator.AutoSize = true;
+            this.lblScoreIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScoreIndicator.ForeColor = System.Drawing.Color.Red;
+            this.lblScoreIndicator.Location = new System.Drawing.Point(192, 292);
+            this.lblScoreIndicator.Name = "lblScoreIndicator";
+            this.lblScoreIndicator.Size = new System.Drawing.Size(85, 25);
+            this.lblScoreIndicator.TabIndex = 21;
+            this.lblScoreIndicator.Text = "indicator";
+            // 
+            // lblTimeLeft
+            // 
+            this.lblTimeLeft.AutoSize = true;
+            this.lblTimeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimeLeft.ForeColor = System.Drawing.Color.White;
+            this.lblTimeLeft.Location = new System.Drawing.Point(138, 534);
+            this.lblTimeLeft.Name = "lblTimeLeft";
+            this.lblTimeLeft.Size = new System.Drawing.Size(59, 29);
+            this.lblTimeLeft.TabIndex = 22;
+            this.lblTimeLeft.Text = "time";
+            // 
+            // tmrTimeLeft
+            // 
+            this.tmrTimeLeft.Interval = 1000;
+            this.tmrTimeLeft.Tick += new System.EventHandler(this.tmrTimeLeft_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1099, 572);
+            this.Controls.Add(this.lblTimeLeft);
+            this.Controls.Add(this.lblScoreIndicator);
+            this.Controls.Add(this.lblTimeLeftHolder);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.rbOption4);
             this.Controls.Add(this.rbOption3);
@@ -222,5 +268,9 @@
         private System.Windows.Forms.RadioButton rbOption3;
         private System.Windows.Forms.RadioButton rbOption4;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblTimeLeftHolder;
+        private System.Windows.Forms.Label lblScoreIndicator;
+        private System.Windows.Forms.Label lblTimeLeft;
+        private System.Windows.Forms.Timer tmrTimeLeft;
     }
 }
