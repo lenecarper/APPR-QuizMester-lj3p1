@@ -109,28 +109,38 @@ namespace APPR_QuizMester_lj3p1
                 lblConfirmPasswordError.Text = "Passwords do not match";
             }
 
+            // Check whether the string is empty or null, if true, display an error
             if (string.IsNullOrEmpty(txbRegisterUser.Text) || string.IsNullOrEmpty(txbRegisterPassword.Text))
             {
                 lblRegisterUsernameError.Text = "Username cannot be blank or already exists";
             }
             else
             {
+                // If the string is not null, add a database connection string
                 string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
 
+                // Add a new SQL database connection
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+                    // Open the database connection, get the variables from username and password
                     connection.Open();
                     string username = txbRegisterUser.Text;
                     string password = txbRegisterPassword.Text;
+                    // Insert the user into the database if the credentials are valid
                     string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
 
+                    // Add the username and password into the database with the insertQuery and connection
                     using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
+                        // Get the username and password previously declared
                         command.Parameters.AddWithValue("@Username", username);
                         command.Parameters.AddWithValue("@Password", password);
 
+                        // Check how many rows are affected by the query
                         int rowsAffected = command.ExecuteNonQuery();
 
+                        // If any rows are affected, display a message saying the user can log in
+                        // otherwise say registration failed and to try again
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Successfully registered, please log in.");
@@ -146,6 +156,7 @@ namespace APPR_QuizMester_lj3p1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // Clear all error message labels
             lblUsernameError.Text = "";
             lblPasswordError.Text = "";
             lblRegisterUsernameError.Text = "";
@@ -155,32 +166,38 @@ namespace APPR_QuizMester_lj3p1
 
         private void linkLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // Highlight the login username textbox when the login link is clicked
             txbUsername.Focus();
         }
 
         private void linkCreateAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // Highlight the register username textbox when the login link is clicked 
             txbRegisterUser.Focus();
         }
 
         private void txbRegisterPassword_TextChanged(object sender, EventArgs e)
         {
+            // Visually display an asterix as the password field value
             txbRegisterPassword.PasswordChar = '*';
         }
 
         private void txbConfirmPassword_TextChanged(object sender, EventArgs e)
         {
+            // Visually display an asterix as the password field value
             txbRegisterPassword.PasswordChar = '*';
 
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            // Exit the application on exit button click
             Application.Exit();
         }
 
         private void MouseDown_Event(object sender, MouseEventArgs e)
         {
+            // Get the current mouse location when the mouse is held down
             offset.X = e.X;
             offset.Y = e.Y;
             mouseDown = true;
@@ -188,26 +205,32 @@ namespace APPR_QuizMester_lj3p1
 
         private void MouseMove_Event(object sender, MouseEventArgs e)
         {
+            // Check whether the mouse is held down or not
             if (mouseDown == true)
             {
+                // Get current mouse position and save it in a Point
                 Point currentScreenPos = PointToScreen(e.Location);
+                // Save the location and do some math to make it function
                 Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
             }
         }
 
         private void MouseUp_Event(object sender, MouseEventArgs e)
         {
+            // Mouse down is set to false when the user lets go
             mouseDown = false;
         }
 
         private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // Display the forgot password field
             pnlLogin.Visible = false;
             tmrDisplayForm.Start();
         }
 
         private void tmrDisplayForm_Tick(object sender, EventArgs e)
         {
+            // Re-enable the login form, stop the display timer
             pnlLogin.Visible = true;
             tmrDisplayForm.Stop();
         }
