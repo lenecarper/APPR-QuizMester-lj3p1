@@ -15,7 +15,6 @@ namespace APPR_QuizMester_lj3p1
     {
         bool mouseDown;
         private Point offset;
-        // string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
         public Form1()
         {
             InitializeComponent();
