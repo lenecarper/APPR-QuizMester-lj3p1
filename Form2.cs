@@ -45,7 +45,7 @@ namespace APPR_QuizMester_lj3p1
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT QuestionText, WrongAnswer1, WrongAnswer2, WrongAnswer3, CorrectAnswer FROM Questions";
+                string query = "SELECT QuestionText, WrongAnswer1, WrongAnswer2, WrongAnswer3, CorrectAnswer FROM Questions ORDER BY NEWID()";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -65,14 +65,14 @@ namespace APPR_QuizMester_lj3p1
 
                             // Shuffle the options randomly
                             Random rng = new Random();
-                            int n = options.Count;
-                            while (n > 1)
+                            int optionCount = options.Count;
+                            while (optionCount > 1)
                             {
-                                n--;
-                                int k = rng.Next(n + 1);
-                                string value = options[k];
-                                options[k] = options[n];
-                                options[n] = value;
+                                optionCount--;
+                                int optionNext = rng.Next(optionCount + 1);
+                                string value = options[optionNext];
+                                options[optionNext] = options[optionNext];
+                                options[optionNext] = value;
                             }
 
                             Question question = new Question(questionText, options, correctAnswer);

@@ -344,7 +344,7 @@ namespace APPR_QuizMester_lj3p1
             this.lblPasswordError.AutoSize = true;
             this.lblPasswordError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPasswordError.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblPasswordError.Location = new System.Drawing.Point(174, 71);
+            this.lblPasswordError.Location = new System.Drawing.Point(209, 72);
             this.lblPasswordError.Name = "lblPasswordError";
             this.lblPasswordError.Size = new System.Drawing.Size(0, 18);
             this.lblPasswordError.TabIndex = 6;
@@ -468,7 +468,7 @@ namespace APPR_QuizMester_lj3p1
             this.lblUsernameError.AutoSize = true;
             this.lblUsernameError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameError.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblUsernameError.Location = new System.Drawing.Point(174, 67);
+            this.lblUsernameError.Location = new System.Drawing.Point(209, 72);
             this.lblUsernameError.Name = "lblUsernameError";
             this.lblUsernameError.Size = new System.Drawing.Size(0, 18);
             this.lblUsernameError.TabIndex = 6;
