@@ -223,5 +223,66 @@ namespace APPR_QuizMester_lj3p1
             // If the user is in the top 10, display it in the quiz' final data leaderboard
             Application.Exit();
         }
+
+        private void retrieveLeaderboard()
+        {
+            // Database connection string
+            string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
+
+            // Add a new SQL database connection using the connectionString
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                // Open the database connection
+                con.Open();
+                // Add a query to select the questions, wrong answers and correct answer from the database
+                // Order by NEWID() which sorts the question index randomly (built-in function)
+                string query = "SELECT QuestionText, WrongAnswer1, WrongAnswer2, WrongAnswer3, CorrectAnswer FROM Questions LIMIT 10";
+                // Declare a new SQLCommand using the query and connectionString
+                using (SqlCommand command = new SqlCommand(query, con))
+                {
+                    // Declare a new SQL data reader to fetch data from the database
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // While the reader is active
+                        while (reader.Read())
+                        {
+                            // Fetch all data from the row the query was executed on
+                            string questionText = reader.GetString(0);
+                            string wrongAnswer1 = reader.GetString(1);
+                            string wrongAnswer2 = reader.GetString(2);
+                            string wrongAnswer3 = reader.GetString(3);
+                            string correctAnswer = reader.GetString(4);
+
+                            // Save the data into a List item
+                            List<string> options = new List<string>
+                            {
+                                wrongAnswer1, wrongAnswer2, wrongAnswer3, correctAnswer
+                            };
+
+                            // Shuffle the options randomly
+                            Random rng = new Random();
+                            int optionCount = options.Count;
+                            // While there is more than 1 option, shuffle the questions randomly
+                            while (optionCount > 1)
+                            {
+                                // Decrement the options amount
+                                optionCount--;
+                                // Declare a next option by returning a non-negative int
+                                // and increment 1 to the total amount
+                                int optionNext = rng.Next(optionCount + 1);
+                                // Save the value of the next option
+                                string value = options[optionNext];
+                                options[optionNext] = options[optionNext];
+                                // Save the options into the value variable
+                                options[optionNext] = value;
+                            }
+                            // Save the question as an object, add the previous data into the object
+                            Question question = new Question(questionText, options, correctAnswer);
+                            questions.Add(question);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
