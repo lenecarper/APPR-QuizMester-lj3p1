@@ -327,7 +327,7 @@
             this.pnlLeaderboard.Controls.Add(this.lbxLeaderboard);
             this.pnlLeaderboard.Location = new System.Drawing.Point(12, 12);
             this.pnlLeaderboard.Name = "pnlLeaderboard";
-            this.pnlLeaderboard.Size = new System.Drawing.Size(401, 548);
+            this.pnlLeaderboard.Size = new System.Drawing.Size(485, 548);
             this.pnlLeaderboard.TabIndex = 29;
             // 
             // lblUsername
@@ -344,11 +344,14 @@
             // 
             // lbxLeaderboard
             // 
+            this.lbxLeaderboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.lbxLeaderboard.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbxLeaderboard.ForeColor = System.Drawing.Color.Purple;
             this.lbxLeaderboard.FormattingEnabled = true;
-            this.lbxLeaderboard.ItemHeight = 16;
+            this.lbxLeaderboard.ItemHeight = 36;
             this.lbxLeaderboard.Location = new System.Drawing.Point(18, 26);
             this.lbxLeaderboard.Name = "lbxLeaderboard";
-            this.lbxLeaderboard.Size = new System.Drawing.Size(365, 500);
+            this.lbxLeaderboard.Size = new System.Drawing.Size(454, 508);
             this.lbxLeaderboard.TabIndex = 0;
             // 
             // Form2

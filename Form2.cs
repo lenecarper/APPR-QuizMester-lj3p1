@@ -210,6 +210,42 @@ namespace APPR_QuizMester_lj3p1
                 lblFinalScore.Text = "Final score: " + currentScore.ToString();
                 lblCorrectAnswers.Text = "Correct answers: " + correctAnswers.ToString();
                 lblWrongAnswers.Text = "Wrong answers: " + wrongAnswers.ToString();
+
+                // If the string is not null, add a database connection string
+                string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
+
+                // Add a new SQL database connection
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    // Open the database connection, get the variables from username and password
+                    connection.Open();
+                    string username = _username;
+                    string score = currentScore.ToString();
+                    // Insert the user into the database if the credentials are valid
+                    string insertQuery = "INSERT INTO Leaderboard (Username, Score) VALUES (@Username, @Score)";
+
+                    // Add the username and password into the database with the insertQuery and connection
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
+                    {
+                        // Get the username and password previously declared
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Score", score);
+
+                        // Check how many rows are affected by the query
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // If any rows are affected, display a message saying the user can log in
+                        // otherwise say registration failed and to try again
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Inserted successfully");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Could not insert");
+                        }
+                    }
+                }
             }
         }
 
