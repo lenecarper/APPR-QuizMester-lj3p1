@@ -304,7 +304,7 @@ namespace APPR_QuizMester_lj3p1
                 currentQuestionIndex++;
                 ClearSelection();
                 DisplayQuestion();
-                lblSkipsLeft.Text = skipsLeft.ToString();
+                lblSkipsLeft.Text = "Skips left: " + skipsLeft.ToString();
             }
             else
             {
