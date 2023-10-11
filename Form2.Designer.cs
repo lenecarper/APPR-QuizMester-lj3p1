@@ -54,6 +54,9 @@
             this.pnlLeaderboard = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lbxLeaderboard = new System.Windows.Forms.ListBox();
+            this.lblSkipsLeft = new System.Windows.Forms.Label();
+            this.btnSkip = new System.Windows.Forms.Button();
+            this.lblSkipIndicator = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -189,9 +192,9 @@
             this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(519, 439);
+            this.btnNext.Location = new System.Drawing.Point(417, 465);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(282, 74);
+            this.btnNext.Size = new System.Drawing.Size(234, 74);
             this.btnNext.TabIndex = 19;
             this.btnNext.Text = "Confirm";
             this.btnNext.UseVisualStyleBackColor = true;
@@ -215,9 +218,9 @@
             this.lblScoreIndicator.ForeColor = System.Drawing.Color.Red;
             this.lblScoreIndicator.Location = new System.Drawing.Point(173, 276);
             this.lblScoreIndicator.Name = "lblScoreIndicator";
-            this.lblScoreIndicator.Size = new System.Drawing.Size(85, 25);
+            this.lblScoreIndicator.Size = new System.Drawing.Size(138, 25);
             this.lblScoreIndicator.TabIndex = 21;
-            this.lblScoreIndicator.Text = "indicator";
+            this.lblScoreIndicator.Text = "score indicator";
             // 
             // lblTimeLeft
             // 
@@ -251,6 +254,9 @@
             // 
             // pnlQuizFinished
             // 
+            this.pnlQuizFinished.Controls.Add(this.lblSkipIndicator);
+            this.pnlQuizFinished.Controls.Add(this.btnSkip);
+            this.pnlQuizFinished.Controls.Add(this.lblSkipsLeft);
             this.pnlQuizFinished.Controls.Add(this.pcbLogo);
             this.pnlQuizFinished.Controls.Add(this.lblTimeLeft);
             this.pnlQuizFinished.Controls.Add(this.btnExit);
@@ -354,6 +360,45 @@
             this.lbxLeaderboard.Size = new System.Drawing.Size(454, 508);
             this.lbxLeaderboard.TabIndex = 0;
             // 
+            // lblSkipsLeft
+            // 
+            this.lblSkipsLeft.AutoSize = true;
+            this.lblSkipsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSkipsLeft.ForeColor = System.Drawing.Color.White;
+            this.lblSkipsLeft.Location = new System.Drawing.Point(-3, 481);
+            this.lblSkipsLeft.Name = "lblSkipsLeft";
+            this.lblSkipsLeft.Size = new System.Drawing.Size(161, 32);
+            this.lblSkipsLeft.TabIndex = 24;
+            this.lblSkipsLeft.Text = "Skips left: 0";
+            // 
+            // btnSkip
+            // 
+            this.btnSkip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSkip.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSkip.FlatAppearance.BorderSize = 2;
+            this.btnSkip.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSkip.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkip.ForeColor = System.Drawing.Color.White;
+            this.btnSkip.Location = new System.Drawing.Point(672, 465);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(234, 74);
+            this.btnSkip.TabIndex = 25;
+            this.btnSkip.Text = "Skip";
+            this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
+            // 
+            // lblSkipIndicator
+            // 
+            this.lblSkipIndicator.AutoSize = true;
+            this.lblSkipIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSkipIndicator.ForeColor = System.Drawing.Color.Red;
+            this.lblSkipIndicator.Location = new System.Drawing.Point(667, 436);
+            this.lblSkipIndicator.Name = "lblSkipIndicator";
+            this.lblSkipIndicator.Size = new System.Drawing.Size(125, 25);
+            this.lblSkipIndicator.TabIndex = 26;
+            this.lblSkipIndicator.Text = "skip indicator";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -409,5 +454,8 @@
         private System.Windows.Forms.Panel pnlLeaderboard;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.ListBox lbxLeaderboard;
+        private System.Windows.Forms.Label lblSkipsLeft;
+        private System.Windows.Forms.Button btnSkip;
+        private System.Windows.Forms.Label lblSkipIndicator;
     }
 }

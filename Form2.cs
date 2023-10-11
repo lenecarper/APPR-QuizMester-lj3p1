@@ -16,9 +16,10 @@ namespace APPR_QuizMester_lj3p1
         // Declare variables
         // Current score, time left, correct/wrong answer values are all saved in an int
         int currentScore = 0;
-        int timeLeft = 10;
+        int timeLeft = 30;
         int correctAnswers = 0;
         int wrongAnswers = 0;
+        int skipsLeft = 1;
         // Get the questions from a class (Question.cs) and the database
         private List<Question> questions = new List<Question>();
         // The question index is initiated at 0
@@ -45,6 +46,7 @@ namespace APPR_QuizMester_lj3p1
             lblCurrentScore.Text = currentScore.ToString();
             ClearSelection();
             lblScoreIndicator.Text = "";
+            lblSkipIndicator.Text = "";
             lblTimeLeft.Text = timeLeft.ToString();
         }
 
@@ -196,6 +198,7 @@ namespace APPR_QuizMester_lj3p1
             lblTimeLeft.Text = timeLeft.ToString();
             // Remove the score indicator every second
             lblScoreIndicator.Text = "";
+            lblSkipIndicator.Text = "";
             // Check if the user has ran out of time
             if (timeLeft == 0)
             {
@@ -289,6 +292,23 @@ namespace APPR_QuizMester_lj3p1
             {
                 if (connection.State == System.Data.ConnectionState.Open)
                     connection.Close();
+            }
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            if (skipsLeft > 0)
+            {
+                skipsLeft--;
+                // Increment the question index, clear all selections, display a new question
+                currentQuestionIndex++;
+                ClearSelection();
+                DisplayQuestion();
+                lblSkipsLeft.Text = skipsLeft.ToString();
+            }
+            else
+            {
+                lblSkipIndicator.Text = "No skips left!";
             }
         }
     }
