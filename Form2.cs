@@ -25,12 +25,14 @@ namespace APPR_QuizMester_lj3p1
         private int currentQuestionIndex = 0;
         // Declare and access the username variable passed along by Form1
         private string _username;
+        private SqlConnection connection = new SqlConnection("Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True");
         public Form2(string username)
         {
             // Access the username and initialize the project
             InitializeComponent();
             LoadQuestionsFromDatabase();
             DisplayQuestion();
+            LoadTopScores();
             _username = username;
         }
 
@@ -224,64 +226,33 @@ namespace APPR_QuizMester_lj3p1
             Application.Exit();
         }
 
-        private void retrieveLeaderboard()
+        private void LoadTopScores()
         {
-            // Database connection string
-            string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
-
-            // Add a new SQL database connection using the connectionString
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                // Open the database connection
-                con.Open();
-                // Add a query to select the questions, wrong answers and correct answer from the database
-                // Order by NEWID() which sorts the question index randomly (built-in function)
-                string query = "SELECT QuestionText, WrongAnswer1, WrongAnswer2, WrongAnswer3, CorrectAnswer FROM Questions LIMIT 10";
-                // Declare a new SQLCommand using the query and connectionString
-                using (SqlCommand command = new SqlCommand(query, con))
+                connection.Open();
+
+                string query = "SELECT TOP 10 Username, Score FROM Leaderboard ORDER BY Score DESC";
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    // Declare a new SQL data reader to fetch data from the database
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        // While the reader is active
-                        while (reader.Read())
-                        {
-                            // Fetch all data from the row the query was executed on
-                            string questionText = reader.GetString(0);
-                            string wrongAnswer1 = reader.GetString(1);
-                            string wrongAnswer2 = reader.GetString(2);
-                            string wrongAnswer3 = reader.GetString(3);
-                            string correctAnswer = reader.GetString(4);
-
-                            // Save the data into a List item
-                            List<string> options = new List<string>
-                            {
-                                wrongAnswer1, wrongAnswer2, wrongAnswer3, correctAnswer
-                            };
-
-                            // Shuffle the options randomly
-                            Random rng = new Random();
-                            int optionCount = options.Count;
-                            // While there is more than 1 option, shuffle the questions randomly
-                            while (optionCount > 1)
-                            {
-                                // Decrement the options amount
-                                optionCount--;
-                                // Declare a next option by returning a non-negative int
-                                // and increment 1 to the total amount
-                                int optionNext = rng.Next(optionCount + 1);
-                                // Save the value of the next option
-                                string value = options[optionNext];
-                                options[optionNext] = options[optionNext];
-                                // Save the options into the value variable
-                                options[optionNext] = value;
-                            }
-                            // Save the question as an object, add the previous data into the object
-                            Question question = new Question(questionText, options, correctAnswer);
-                            questions.Add(question);
-                        }
-                    }
+                    string username = reader["Username"].ToString();
+                    int score = Convert.ToInt32(reader["Score"]);
+                    lbxLeaderboard.Items.Add($"Username: {username}, Score: {score}");
                 }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                if (connection.State == System.Data.ConnectionState.Open)
+                    connection.Close();
             }
         }
     }

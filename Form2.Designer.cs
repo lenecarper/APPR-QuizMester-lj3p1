@@ -52,8 +52,8 @@
             this.lblCorrectAnswers = new System.Windows.Forms.Label();
             this.lblWrongAnswers = new System.Windows.Forms.Label();
             this.pnlLeaderboard = new System.Windows.Forms.Panel();
-            this.rtbLeaderboard = new System.Windows.Forms.RichTextBox();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.lbxLeaderboard = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -264,7 +264,7 @@
             this.pnlQuizFinished.Controls.Add(this.rbOption3);
             this.pnlQuizFinished.Controls.Add(this.rbOption1);
             this.pnlQuizFinished.Controls.Add(this.rbOption2);
-            this.pnlQuizFinished.Location = new System.Drawing.Point(0, 0);
+            this.pnlQuizFinished.Location = new System.Drawing.Point(12, 0);
             this.pnlQuizFinished.Name = "pnlQuizFinished";
             this.pnlQuizFinished.Size = new System.Drawing.Size(1092, 560);
             this.pnlQuizFinished.TabIndex = 24;
@@ -324,22 +324,11 @@
             // 
             // pnlLeaderboard
             // 
-            this.pnlLeaderboard.Controls.Add(this.rtbLeaderboard);
+            this.pnlLeaderboard.Controls.Add(this.lbxLeaderboard);
             this.pnlLeaderboard.Location = new System.Drawing.Point(12, 12);
             this.pnlLeaderboard.Name = "pnlLeaderboard";
             this.pnlLeaderboard.Size = new System.Drawing.Size(401, 548);
             this.pnlLeaderboard.TabIndex = 29;
-            // 
-            // rtbLeaderboard
-            // 
-            this.rtbLeaderboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rtbLeaderboard.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbLeaderboard.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.rtbLeaderboard.Location = new System.Drawing.Point(10, 10);
-            this.rtbLeaderboard.Name = "rtbLeaderboard";
-            this.rtbLeaderboard.Size = new System.Drawing.Size(380, 529);
-            this.rtbLeaderboard.TabIndex = 30;
-            this.rtbLeaderboard.Text = "";
             // 
             // lblUsername
             // 
@@ -352,6 +341,15 @@
             this.lblUsername.Size = new System.Drawing.Size(198, 42);
             this.lblUsername.TabIndex = 30;
             this.lblUsername.Text = "Username";
+            // 
+            // lbxLeaderboard
+            // 
+            this.lbxLeaderboard.FormattingEnabled = true;
+            this.lbxLeaderboard.ItemHeight = 16;
+            this.lbxLeaderboard.Location = new System.Drawing.Point(18, 26);
+            this.lbxLeaderboard.Name = "lbxLeaderboard";
+            this.lbxLeaderboard.Size = new System.Drawing.Size(365, 500);
+            this.lbxLeaderboard.TabIndex = 0;
             // 
             // Form2
             // 
@@ -406,7 +404,7 @@
         private System.Windows.Forms.Label lblCorrectAnswers;
         private System.Windows.Forms.Label lblWrongAnswers;
         private System.Windows.Forms.Panel pnlLeaderboard;
-        private System.Windows.Forms.RichTextBox rtbLeaderboard;
         private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.ListBox lbxLeaderboard;
     }
 }
