@@ -240,7 +240,7 @@ namespace APPR_QuizMester_lj3p1
         private void MouseHover_Event(object sender, EventArgs e)
         {
             // Specify the file path to your custom cursor image
-            string cursorImagePath = "C:\\Users\\M\\Downloads\\custom_cursor.cur";
+            string cursorImagePath = "C:\\Users\\M\\Downloads\\custom_cursor_full.cur";
 
             // Check if the file exists
             if (System.IO.File.Exists(cursorImagePath))
