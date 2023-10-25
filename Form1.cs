@@ -237,7 +237,7 @@ namespace APPR_QuizMester_lj3p1
             tmrDisplayForm.Stop();
         }
 
-        private void MouseHover_Event(object sender, EventArgs e)
+        /* private void MouseHover_Event(object sender, EventArgs e)
         {
             // Specify the file path to your custom cursor image
             string cursorImagePath = "C:\\Users\\M\\Downloads\\custom_cursor_full.cur";
@@ -257,6 +257,6 @@ namespace APPR_QuizMester_lj3p1
         {
             // Reset the cursor back to the default cursor when leaving the button
             Cursor = Cursors.Default;
-        }
+        } */
     }
 }

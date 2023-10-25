@@ -254,8 +254,6 @@ namespace APPR_QuizMester_lj3p1
             this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            this.btnLogin.MouseLeave += new System.EventHandler(this.MouseLeave_Event);
-            this.btnLogin.MouseHover += new System.EventHandler(this.MouseHover_Event);
             // 
             // lblRegister
             // 
