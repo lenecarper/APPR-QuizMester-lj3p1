@@ -239,11 +239,24 @@ namespace APPR_QuizMester_lj3p1
 
         private void MouseHover_Event(object sender, EventArgs e)
         {
-            // Load the custom cursor from resources (assuming the cursor name is "custom_cursor")
-            Cursor customCursor = new Cursor(Properties.Resources.custom_cursor.GetHicon());
+            // Specify the file path to your custom cursor image
+            string cursorImagePath = "C:\\Users\\M\\Downloads\\custom_cursor.cur";
 
-            // Set the cursor to the custom cursor image when hovering over the button
-            Cursor = customCursor;
+            // Check if the file exists
+            if (System.IO.File.Exists(cursorImagePath))
+            {
+                // Load the cursor from the file path
+                Cursor customCursor = new Cursor(cursorImagePath);
+
+                // Set the cursor to the custom cursor image when hovering over the button
+                Cursor = customCursor;
+            }
+        }
+
+        private void MouseLeave_Event(object sender, EventArgs e)
+        {
+            // Reset the cursor back to the default cursor when leaving the button
+            Cursor = Cursors.Default;
         }
     }
 }
