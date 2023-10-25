@@ -14,6 +14,9 @@ namespace APPR_QuizMester_lj3p1
     public partial class Form2 : Form
     {
         // Declare variables
+        // Allow form moving without a border
+        bool mouseDown;
+        private Point offset;
         // Current score, time left, correct/wrong answer values are all saved in an int
         int currentScore = 0;
         int timeLeft = 30;
@@ -310,6 +313,32 @@ namespace APPR_QuizMester_lj3p1
             {
                 lblSkipIndicator.Text = "No skips left!";
             }
+        }
+
+        private void MouseDown_Event(object sender, MouseEventArgs e)
+        {
+            // Get the current mouse location when the mouse is held down
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void MouseMove_Event(object sender, MouseEventArgs e)
+        {
+            // Check whether the mouse is held down or not
+            if (mouseDown == true)
+            {
+                // Get current mouse position and save it in a Point
+                Point currentScreenPos = PointToScreen(e.Location);
+                // Save the location and do some math to make it function
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
+
+        private void MouseUp_Event(object sender, MouseEventArgs e)
+        {
+            // Mouse down is set to false when the user lets go
+            mouseDown = false;
         }
     }
 }

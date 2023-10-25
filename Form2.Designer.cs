@@ -47,16 +47,16 @@
             this.tmrTimeLeft = new System.Windows.Forms.Timer(this.components);
             this.btnExit = new System.Windows.Forms.Button();
             this.pnlQuizFinished = new System.Windows.Forms.Panel();
+            this.lblSkipIndicator = new System.Windows.Forms.Label();
+            this.btnSkip = new System.Windows.Forms.Button();
+            this.lblSkipsLeft = new System.Windows.Forms.Label();
             this.lblFinalScore = new System.Windows.Forms.Label();
             this.btnFinishQuiz = new System.Windows.Forms.Button();
             this.lblCorrectAnswers = new System.Windows.Forms.Label();
             this.lblWrongAnswers = new System.Windows.Forms.Label();
             this.pnlLeaderboard = new System.Windows.Forms.Panel();
-            this.lblUsername = new System.Windows.Forms.Label();
             this.lbxLeaderboard = new System.Windows.Forms.ListBox();
-            this.lblSkipsLeft = new System.Windows.Forms.Label();
-            this.btnSkip = new System.Windows.Forms.Button();
-            this.lblSkipIndicator = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -274,6 +274,48 @@
             this.pnlQuizFinished.Name = "pnlQuizFinished";
             this.pnlQuizFinished.Size = new System.Drawing.Size(1092, 560);
             this.pnlQuizFinished.TabIndex = 24;
+            this.pnlQuizFinished.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown_Event);
+            this.pnlQuizFinished.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove_Event);
+            this.pnlQuizFinished.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUp_Event);
+            // 
+            // lblSkipIndicator
+            // 
+            this.lblSkipIndicator.AutoSize = true;
+            this.lblSkipIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSkipIndicator.ForeColor = System.Drawing.Color.Red;
+            this.lblSkipIndicator.Location = new System.Drawing.Point(667, 436);
+            this.lblSkipIndicator.Name = "lblSkipIndicator";
+            this.lblSkipIndicator.Size = new System.Drawing.Size(125, 25);
+            this.lblSkipIndicator.TabIndex = 26;
+            this.lblSkipIndicator.Text = "skip indicator";
+            // 
+            // btnSkip
+            // 
+            this.btnSkip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSkip.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSkip.FlatAppearance.BorderSize = 2;
+            this.btnSkip.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnSkip.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSkip.ForeColor = System.Drawing.Color.White;
+            this.btnSkip.Location = new System.Drawing.Point(672, 465);
+            this.btnSkip.Name = "btnSkip";
+            this.btnSkip.Size = new System.Drawing.Size(234, 74);
+            this.btnSkip.TabIndex = 25;
+            this.btnSkip.Text = "Skip";
+            this.btnSkip.UseVisualStyleBackColor = true;
+            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
+            // 
+            // lblSkipsLeft
+            // 
+            this.lblSkipsLeft.AutoSize = true;
+            this.lblSkipsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSkipsLeft.ForeColor = System.Drawing.Color.White;
+            this.lblSkipsLeft.Location = new System.Drawing.Point(-3, 481);
+            this.lblSkipsLeft.Name = "lblSkipsLeft";
+            this.lblSkipsLeft.Size = new System.Drawing.Size(161, 32);
+            this.lblSkipsLeft.TabIndex = 24;
+            this.lblSkipsLeft.Text = "Skips left: 0";
             // 
             // lblFinalScore
             // 
@@ -336,18 +378,6 @@
             this.pnlLeaderboard.Size = new System.Drawing.Size(485, 548);
             this.pnlLeaderboard.TabIndex = 29;
             // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblUsername.Location = new System.Drawing.Point(774, 22);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(198, 42);
-            this.lblUsername.TabIndex = 30;
-            this.lblUsername.Text = "Username";
-            // 
             // lbxLeaderboard
             // 
             this.lbxLeaderboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
@@ -360,44 +390,17 @@
             this.lbxLeaderboard.Size = new System.Drawing.Size(454, 508);
             this.lbxLeaderboard.TabIndex = 0;
             // 
-            // lblSkipsLeft
+            // lblUsername
             // 
-            this.lblSkipsLeft.AutoSize = true;
-            this.lblSkipsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkipsLeft.ForeColor = System.Drawing.Color.White;
-            this.lblSkipsLeft.Location = new System.Drawing.Point(-3, 481);
-            this.lblSkipsLeft.Name = "lblSkipsLeft";
-            this.lblSkipsLeft.Size = new System.Drawing.Size(161, 32);
-            this.lblSkipsLeft.TabIndex = 24;
-            this.lblSkipsLeft.Text = "Skips left: 0";
-            // 
-            // btnSkip
-            // 
-            this.btnSkip.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSkip.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnSkip.FlatAppearance.BorderSize = 2;
-            this.btnSkip.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSkip.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
-            this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSkip.ForeColor = System.Drawing.Color.White;
-            this.btnSkip.Location = new System.Drawing.Point(672, 465);
-            this.btnSkip.Name = "btnSkip";
-            this.btnSkip.Size = new System.Drawing.Size(234, 74);
-            this.btnSkip.TabIndex = 25;
-            this.btnSkip.Text = "Skip";
-            this.btnSkip.UseVisualStyleBackColor = true;
-            this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
-            // 
-            // lblSkipIndicator
-            // 
-            this.lblSkipIndicator.AutoSize = true;
-            this.lblSkipIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSkipIndicator.ForeColor = System.Drawing.Color.Red;
-            this.lblSkipIndicator.Location = new System.Drawing.Point(667, 436);
-            this.lblSkipIndicator.Name = "lblSkipIndicator";
-            this.lblSkipIndicator.Size = new System.Drawing.Size(125, 25);
-            this.lblSkipIndicator.TabIndex = 26;
-            this.lblSkipIndicator.Text = "skip indicator";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblUsername.Location = new System.Drawing.Point(774, 22);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(198, 42);
+            this.lblUsername.TabIndex = 30;
+            this.lblUsername.Text = "Username";
             // 
             // Form2
             // 
