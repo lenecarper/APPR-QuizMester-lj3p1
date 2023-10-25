@@ -225,30 +225,9 @@ namespace APPR_QuizMester_lj3p1
 
         private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Specify the path to your PowerPoint file
-            string powerpointFilePath = "C:\\Users\\M\\Downloads\\csharp.pptx";
-
-            // Create a PowerPoint application instance
-            PowerPoint.Application pptApp = new PowerPoint.Application();
-
-            // Open the PowerPoint presentation
-            PowerPoint.Presentation presentation = pptApp.Presentations.Open(powerpointFilePath,
-                                                                              Microsoft.Office.Core.MsoTriState.msoFalse,
-                                                                              Microsoft.Office.Core.MsoTriState.msoFalse,
-                                                                              Microsoft.Office.Core.MsoTriState.msoTrue);
-
-            // Start the slideshow from the beginning (index 1) and set it to loop continuously
-            presentation.SlideShowSettings.StartingSlide = 1;
-            presentation.SlideShowSettings.EndingSlide = presentation.Slides.Count;
-            presentation.SlideShowSettings.LoopUntilStopped = Microsoft.Office.Core.MsoTriState.msoTrue;
-            presentation.SlideShowSettings.AdvanceMode = PowerPoint.PpSlideShowAdvanceMode.ppSlideShowUseSlideTimings;
-
-            // Show the slideshow
-            presentation.SlideShowSettings.Run();
-
-            // Release COM objects to prevent memory leaks
-            Marshal.ReleaseComObject(pptApp);
-            Marshal.ReleaseComObject(presentation);
+            // Display the forgot password field
+            pnlLogin.Visible = false;
+            tmrDisplayForm.Start();
         }
 
         private void tmrDisplayForm_Tick(object sender, EventArgs e)

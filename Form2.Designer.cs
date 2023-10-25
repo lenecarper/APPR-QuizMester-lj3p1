@@ -57,6 +57,7 @@
             this.pnlLeaderboard = new System.Windows.Forms.Panel();
             this.lbxLeaderboard = new System.Windows.Forms.ListBox();
             this.lblUsername = new System.Windows.Forms.Label();
+            this.btnPowerpoint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -402,12 +403,27 @@
             this.lblUsername.TabIndex = 30;
             this.lblUsername.Text = "Username";
             // 
+            // btnPowerpoint
+            // 
+            this.btnPowerpoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPowerpoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPowerpoint.ForeColor = System.Drawing.Color.White;
+            this.btnPowerpoint.Image = ((System.Drawing.Image)(resources.GetObject("btnPowerpoint.Image")));
+            this.btnPowerpoint.Location = new System.Drawing.Point(704, 444);
+            this.btnPowerpoint.Name = "btnPowerpoint";
+            this.btnPowerpoint.Size = new System.Drawing.Size(316, 116);
+            this.btnPowerpoint.TabIndex = 31;
+            this.btnPowerpoint.Text = "Click here to appreciate mr. Sprong";
+            this.btnPowerpoint.UseVisualStyleBackColor = true;
+            this.btnPowerpoint.Click += new System.EventHandler(this.btnPowerpoint_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1099, 572);
+            this.Controls.Add(this.btnPowerpoint);
             this.Controls.Add(this.pnlQuizFinished);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblFinalScore);
@@ -460,5 +476,6 @@
         private System.Windows.Forms.Label lblSkipsLeft;
         private System.Windows.Forms.Button btnSkip;
         private System.Windows.Forms.Label lblSkipIndicator;
+        private System.Windows.Forms.Button btnPowerpoint;
     }
 }

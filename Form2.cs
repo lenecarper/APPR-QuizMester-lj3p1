@@ -5,9 +5,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 
 namespace APPR_QuizMester_lj3p1
 {
@@ -339,6 +342,34 @@ namespace APPR_QuizMester_lj3p1
         {
             // Mouse down is set to false when the user lets go
             mouseDown = false;
+        }
+
+        private void btnPowerpoint_Click(object sender, EventArgs e)
+        {
+            // Specify the path to your PowerPoint file
+            string powerpointFilePath = "C:\\Users\\M\\Downloads\\csharp.pptx";
+
+            // Create a PowerPoint application instance
+            PowerPoint.Application pptApp = new PowerPoint.Application();
+
+            // Open the PowerPoint presentation
+            PowerPoint.Presentation presentation = pptApp.Presentations.Open(powerpointFilePath,
+                                                                              Microsoft.Office.Core.MsoTriState.msoFalse,
+                                                                              Microsoft.Office.Core.MsoTriState.msoFalse,
+                                                                              Microsoft.Office.Core.MsoTriState.msoTrue);
+
+            // Start the slideshow from the beginning (index 1) and set it to loop continuously
+            presentation.SlideShowSettings.StartingSlide = 1;
+            presentation.SlideShowSettings.EndingSlide = presentation.Slides.Count;
+            presentation.SlideShowSettings.LoopUntilStopped = Microsoft.Office.Core.MsoTriState.msoTrue;
+            presentation.SlideShowSettings.AdvanceMode = PowerPoint.PpSlideShowAdvanceMode.ppSlideShowUseSlideTimings;
+
+            // Show the slideshow
+            presentation.SlideShowSettings.Run();
+
+            // Release COM objects to prevent memory leaks
+            Marshal.ReleaseComObject(pptApp);
+            Marshal.ReleaseComObject(presentation);
         }
     }
 }
