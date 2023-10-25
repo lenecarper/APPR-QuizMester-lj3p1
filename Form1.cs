@@ -236,5 +236,14 @@ namespace APPR_QuizMester_lj3p1
             pnlLogin.Visible = true;
             tmrDisplayForm.Stop();
         }
+
+        private void MouseHover_Event(object sender, EventArgs e)
+        {
+            // Load the custom cursor from resources (assuming the cursor name is "custom_cursor")
+            Cursor customCursor = new Cursor(Properties.Resources.custom_cursor.GetHicon());
+
+            // Set the cursor to the custom cursor image when hovering over the button
+            Cursor = customCursor;
+        }
     }
 }
