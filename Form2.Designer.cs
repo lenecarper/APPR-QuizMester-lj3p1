@@ -423,7 +423,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(1099, 572);
-            this.Controls.Add(this.btnPowerpoint);
             this.Controls.Add(this.pnlQuizFinished);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.lblFinalScore);
@@ -431,6 +430,7 @@
             this.Controls.Add(this.lblCorrectAnswers);
             this.Controls.Add(this.lblWrongAnswers);
             this.Controls.Add(this.pnlLeaderboard);
+            this.Controls.Add(this.btnPowerpoint);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = " ";
