@@ -236,27 +236,5 @@ namespace APPR_QuizMester_lj3p1
             pnlLogin.Visible = true;
             tmrDisplayForm.Stop();
         }
-
-        /* private void MouseHover_Event(object sender, EventArgs e)
-        {
-            // Specify the file path to your custom cursor image
-            string cursorImagePath = "C:\\Users\\M\\Downloads\\custom_cursor_full.cur";
-
-            // Check if the file exists
-            if (System.IO.File.Exists(cursorImagePath))
-            {
-                // Load the cursor from the file path
-                Cursor customCursor = new Cursor(cursorImagePath);
-
-                // Set the cursor to the custom cursor image when hovering over the button
-                Cursor = customCursor;
-            }
-        }
-
-        private void MouseLeave_Event(object sender, EventArgs e)
-        {
-            // Reset the cursor back to the default cursor when leaving the button
-            Cursor = Cursors.Default;
-        } */
     }
 }
