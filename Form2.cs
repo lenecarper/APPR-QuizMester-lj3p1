@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
+using System.Security.Cryptography;
+using System.Diagnostics.Eventing.Reader;
 
 namespace APPR_QuizMester_lj3p1
 {
@@ -27,11 +29,13 @@ namespace APPR_QuizMester_lj3p1
         int wrongAnswers = 0;
         int skipsLeft = 1;
         int assistsLeft = 1;
+        int specialQuestionsLeft = 1;
         // Get the questions from a class (Question.cs) and the database
         private List<Question> questions = new List<Question>();
         private List<Question> assistQuestions = new List<Question>();
         // The question index is initiated at 0
         private int currentQuestionIndex = 0;
+        bool special = false;
         // Declare and access the username variable passed along by Form1
         private string _username;
         private SqlConnection connection = new SqlConnection("Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True");
@@ -60,6 +64,8 @@ namespace APPR_QuizMester_lj3p1
             lblSkipsLeft.Text = "Skips left: " + skipsLeft.ToString();
             lblAssistsLeft.Text = "Assists left: " + assistsLeft.ToString();
             lblTimeLeft.Text = timeLeft.ToString();
+            pcbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbLogo.Image = Properties.Resources.Logo;
         }
 
         private void LoadQuestionsFromDatabase()
@@ -136,6 +142,49 @@ namespace APPR_QuizMester_lj3p1
                 rbOption2.Text = question.Options[1];
                 rbOption3.Text = question.Options[2];
                 rbOption4.Text = question.Options[3];
+            }
+            else
+            {
+                // Show a MessageBox saying the quiz has been completed
+                MessageBox.Show("Quiz completed!");
+            }
+
+            // Check if there are any questions left
+            if (currentQuestionIndex < questions.Count)
+            {
+                // If there are special questions left, check if a special question should be displayed
+                if (specialQuestionsLeft > 0 && new Random().Next(0, 100) < 25)
+                {
+                    // Display a special question at a random index between 1 and 20
+                    special = true;
+                    currentQuestionIndex = new Random().Next(1, 21);
+                    specialQuestionsLeft--;
+
+                    // Get the special question data from the questions object at the selected question index
+                    Question specialQuestion = questions[currentQuestionIndex];
+                    // Add the data to the form elements
+                    lblQuizQuestion.Text = specialQuestion.Text;
+                    rbOption1.Text = specialQuestion.Options[0];
+                    rbOption2.Text = specialQuestion.Options[1];
+                    rbOption3.Text = specialQuestion.Options[2];
+                    rbOption4.Text = specialQuestion.Options[3];
+                    MessageBox.Show("Special Question");
+                    pcbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pcbLogo.Image = Properties.Resources.special;
+                }
+                else
+                {
+                    // Get the data from the questions object at the current question index
+                    Question question = questions[currentQuestionIndex];
+                    // Add the data to the form elements
+                    lblQuizQuestion.Text = question.Text;
+                    rbOption1.Text = question.Options[0];
+                    rbOption2.Text = question.Options[1];
+                    rbOption3.Text = question.Options[2];
+                    rbOption4.Text = question.Options[3];
+                    pcbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pcbLogo.Image = Properties.Resources.Logo;
+                }
             }
             else
             {
@@ -228,6 +277,8 @@ namespace APPR_QuizMester_lj3p1
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            pcbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbLogo.Image = Properties.Resources.Logo;
             // Check the selected answer and move to the next question
             if (rbOption1.Checked || rbOption2.Checked || rbOption3.Checked || rbOption4.Checked)
             {

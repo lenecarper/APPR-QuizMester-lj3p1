@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.pcbLogo = new System.Windows.Forms.PictureBox();
-            this.pnlBackground = new System.Windows.Forms.Panel();
-            this.lblQuizQuestion = new System.Windows.Forms.Label();
-            this.pcbQuizIcon = new System.Windows.Forms.PictureBox();
             this.lblCurrentScoreHolder = new System.Windows.Forms.Label();
             this.lblCurrentScore = new System.Windows.Forms.Label();
             this.rbOption1 = new System.Windows.Forms.RadioButton();
@@ -45,7 +41,6 @@
             this.lblScoreIndicator = new System.Windows.Forms.Label();
             this.lblTimeLeft = new System.Windows.Forms.Label();
             this.tmrTimeLeft = new System.Windows.Forms.Timer(this.components);
-            this.btnExit = new System.Windows.Forms.Button();
             this.pnlQuizFinished = new System.Windows.Forms.Panel();
             this.lblSkipIndicator = new System.Windows.Forms.Label();
             this.btnSkip = new System.Windows.Forms.Button();
@@ -57,61 +52,21 @@
             this.pnlLeaderboard = new System.Windows.Forms.Panel();
             this.lbxLeaderboard = new System.Windows.Forms.ListBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.btnPowerpoint = new System.Windows.Forms.Button();
             this.btnAssist = new System.Windows.Forms.Button();
             this.lblAssistIndicator = new System.Windows.Forms.Label();
             this.lblAssistsLeft = new System.Windows.Forms.Label();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.pnlBackground = new System.Windows.Forms.Panel();
+            this.lblQuizQuestion = new System.Windows.Forms.Label();
+            this.pcbQuizIcon = new System.Windows.Forms.PictureBox();
+            this.btnPowerpoint = new System.Windows.Forms.Button();
+            this.pnlQuizFinished.SuspendLayout();
+            this.pnlLeaderboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
-            this.pnlQuizFinished.SuspendLayout();
-            this.pnlLeaderboard.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pcbLogo
-            // 
-            this.pcbLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbLogo.BackgroundImage")));
-            this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbLogo.Location = new System.Drawing.Point(0, 0);
-            this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(243, 230);
-            this.pcbLogo.TabIndex = 0;
-            this.pcbLogo.TabStop = false;
-            // 
-            // pnlBackground
-            // 
-            this.pnlBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.pnlBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBackground.BackgroundImage")));
-            this.pnlBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlBackground.Controls.Add(this.lblQuizQuestion);
-            this.pnlBackground.Controls.Add(this.pcbQuizIcon);
-            this.pnlBackground.Location = new System.Drawing.Point(356, 90);
-            this.pnlBackground.Name = "pnlBackground";
-            this.pnlBackground.Size = new System.Drawing.Size(597, 140);
-            this.pnlBackground.TabIndex = 1;
-            // 
-            // lblQuizQuestion
-            // 
-            this.lblQuizQuestion.AutoSize = true;
-            this.lblQuizQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuizQuestion.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuizQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblQuizQuestion.Location = new System.Drawing.Point(116, 31);
-            this.lblQuizQuestion.Name = "lblQuizQuestion";
-            this.lblQuizQuestion.Size = new System.Drawing.Size(150, 25);
-            this.lblQuizQuestion.TabIndex = 1;
-            this.lblQuizQuestion.Text = "Filler question";
-            // 
-            // pcbQuizIcon
-            // 
-            this.pcbQuizIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pcbQuizIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbQuizIcon.BackgroundImage")));
-            this.pcbQuizIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pcbQuizIcon.Location = new System.Drawing.Point(0, 0);
-            this.pcbQuizIcon.Name = "pcbQuizIcon";
-            this.pcbQuizIcon.Size = new System.Drawing.Size(110, 140);
-            this.pcbQuizIcon.TabIndex = 0;
-            this.pcbQuizIcon.TabStop = false;
             // 
             // lblCurrentScoreHolder
             // 
@@ -241,20 +196,6 @@
             // 
             this.tmrTimeLeft.Interval = 1000;
             this.tmrTimeLeft.Tick += new System.EventHandler(this.tmrTimeLeft_Tick);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnExit.Location = new System.Drawing.Point(1054, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(38, 35);
-            this.btnExit.TabIndex = 23;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pnlQuizFinished
             // 
@@ -409,20 +350,6 @@
             this.lblUsername.TabIndex = 30;
             this.lblUsername.Text = "Username";
             // 
-            // btnPowerpoint
-            // 
-            this.btnPowerpoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPowerpoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPowerpoint.ForeColor = System.Drawing.Color.White;
-            this.btnPowerpoint.Image = ((System.Drawing.Image)(resources.GetObject("btnPowerpoint.Image")));
-            this.btnPowerpoint.Location = new System.Drawing.Point(704, 444);
-            this.btnPowerpoint.Name = "btnPowerpoint";
-            this.btnPowerpoint.Size = new System.Drawing.Size(316, 116);
-            this.btnPowerpoint.TabIndex = 31;
-            this.btnPowerpoint.Text = "Click here to appreciate mr. Sprong";
-            this.btnPowerpoint.UseVisualStyleBackColor = true;
-            this.btnPowerpoint.Click += new System.EventHandler(this.btnPowerpoint_Click);
-            // 
             // btnAssist
             // 
             this.btnAssist.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -462,6 +389,79 @@
             this.lblAssistsLeft.TabIndex = 29;
             this.lblAssistsLeft.Text = "Assists left: 0";
             // 
+            // pcbLogo
+            // 
+            this.pcbLogo.BackgroundImage = global::APPR_QuizMester_lj3p1.Properties.Resources.Logo;
+            this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbLogo.Location = new System.Drawing.Point(0, 0);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(243, 230);
+            this.pcbLogo.TabIndex = 0;
+            this.pcbLogo.TabStop = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnExit.Location = new System.Drawing.Point(1054, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(38, 35);
+            this.btnExit.TabIndex = 23;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // pnlBackground
+            // 
+            this.pnlBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.pnlBackground.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBackground.BackgroundImage")));
+            this.pnlBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlBackground.Controls.Add(this.lblQuizQuestion);
+            this.pnlBackground.Controls.Add(this.pcbQuizIcon);
+            this.pnlBackground.Location = new System.Drawing.Point(356, 90);
+            this.pnlBackground.Name = "pnlBackground";
+            this.pnlBackground.Size = new System.Drawing.Size(597, 140);
+            this.pnlBackground.TabIndex = 1;
+            // 
+            // lblQuizQuestion
+            // 
+            this.lblQuizQuestion.AutoSize = true;
+            this.lblQuizQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuizQuestion.Font = new System.Drawing.Font("Franklin Gothic Heavy", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuizQuestion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblQuizQuestion.Location = new System.Drawing.Point(116, 31);
+            this.lblQuizQuestion.Name = "lblQuizQuestion";
+            this.lblQuizQuestion.Size = new System.Drawing.Size(150, 25);
+            this.lblQuizQuestion.TabIndex = 1;
+            this.lblQuizQuestion.Text = "Filler question";
+            // 
+            // pcbQuizIcon
+            // 
+            this.pcbQuizIcon.BackColor = System.Drawing.Color.Transparent;
+            this.pcbQuizIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pcbQuizIcon.BackgroundImage")));
+            this.pcbQuizIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pcbQuizIcon.Location = new System.Drawing.Point(0, 0);
+            this.pcbQuizIcon.Name = "pcbQuizIcon";
+            this.pcbQuizIcon.Size = new System.Drawing.Size(110, 140);
+            this.pcbQuizIcon.TabIndex = 0;
+            this.pcbQuizIcon.TabStop = false;
+            // 
+            // btnPowerpoint
+            // 
+            this.btnPowerpoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPowerpoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPowerpoint.ForeColor = System.Drawing.Color.White;
+            this.btnPowerpoint.Image = ((System.Drawing.Image)(resources.GetObject("btnPowerpoint.Image")));
+            this.btnPowerpoint.Location = new System.Drawing.Point(704, 444);
+            this.btnPowerpoint.Name = "btnPowerpoint";
+            this.btnPowerpoint.Size = new System.Drawing.Size(316, 116);
+            this.btnPowerpoint.TabIndex = 31;
+            this.btnPowerpoint.Text = "Click here to appreciate mr. Sprong";
+            this.btnPowerpoint.UseVisualStyleBackColor = true;
+            this.btnPowerpoint.Click += new System.EventHandler(this.btnPowerpoint_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -480,13 +480,13 @@
             this.Name = "Form2";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.pnlQuizFinished.ResumeLayout(false);
+            this.pnlQuizFinished.PerformLayout();
+            this.pnlLeaderboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.pnlBackground.ResumeLayout(false);
             this.pnlBackground.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).EndInit();
-            this.pnlQuizFinished.ResumeLayout(false);
-            this.pnlQuizFinished.PerformLayout();
-            this.pnlLeaderboard.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
