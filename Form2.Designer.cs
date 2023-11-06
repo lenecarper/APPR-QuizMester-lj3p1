@@ -58,6 +58,9 @@
             this.lbxLeaderboard = new System.Windows.Forms.ListBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.btnPowerpoint = new System.Windows.Forms.Button();
+            this.btnAssist = new System.Windows.Forms.Button();
+            this.lblAssistIndicator = new System.Windows.Forms.Label();
+            this.lblAssistsLeft = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.pnlBackground.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbQuizIcon)).BeginInit();
@@ -187,13 +190,13 @@
             // btnNext
             // 
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
             this.btnNext.FlatAppearance.BorderSize = 2;
             this.btnNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = System.Drawing.Color.White;
-            this.btnNext.Location = new System.Drawing.Point(417, 465);
+            this.btnNext.Location = new System.Drawing.Point(560, 465);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(234, 74);
             this.btnNext.TabIndex = 19;
@@ -255,6 +258,9 @@
             // 
             // pnlQuizFinished
             // 
+            this.pnlQuizFinished.Controls.Add(this.lblAssistsLeft);
+            this.pnlQuizFinished.Controls.Add(this.lblAssistIndicator);
+            this.pnlQuizFinished.Controls.Add(this.btnAssist);
             this.pnlQuizFinished.Controls.Add(this.lblSkipIndicator);
             this.pnlQuizFinished.Controls.Add(this.btnSkip);
             this.pnlQuizFinished.Controls.Add(this.lblSkipsLeft);
@@ -284,7 +290,7 @@
             this.lblSkipIndicator.AutoSize = true;
             this.lblSkipIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSkipIndicator.ForeColor = System.Drawing.Color.Red;
-            this.lblSkipIndicator.Location = new System.Drawing.Point(667, 436);
+            this.lblSkipIndicator.Location = new System.Drawing.Point(795, 436);
             this.lblSkipIndicator.Name = "lblSkipIndicator";
             this.lblSkipIndicator.Size = new System.Drawing.Size(125, 25);
             this.lblSkipIndicator.TabIndex = 26;
@@ -293,13 +299,13 @@
             // btnSkip
             // 
             this.btnSkip.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSkip.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSkip.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.btnSkip.FlatAppearance.BorderSize = 2;
-            this.btnSkip.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnSkip.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btnSkip.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnSkip.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkBlue;
             this.btnSkip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSkip.ForeColor = System.Drawing.Color.White;
-            this.btnSkip.Location = new System.Drawing.Point(672, 465);
+            this.btnSkip.Location = new System.Drawing.Point(800, 465);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(234, 74);
             this.btnSkip.TabIndex = 25;
@@ -417,6 +423,45 @@
             this.btnPowerpoint.UseVisualStyleBackColor = true;
             this.btnPowerpoint.Click += new System.EventHandler(this.btnPowerpoint_Click);
             // 
+            // btnAssist
+            // 
+            this.btnAssist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAssist.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnAssist.FlatAppearance.BorderSize = 2;
+            this.btnAssist.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Yellow;
+            this.btnAssist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAssist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssist.ForeColor = System.Drawing.Color.White;
+            this.btnAssist.Location = new System.Drawing.Point(320, 465);
+            this.btnAssist.Name = "btnAssist";
+            this.btnAssist.Size = new System.Drawing.Size(234, 74);
+            this.btnAssist.TabIndex = 27;
+            this.btnAssist.Text = "Assist";
+            this.btnAssist.UseVisualStyleBackColor = true;
+            this.btnAssist.Click += new System.EventHandler(this.btnAssist_Click);
+            // 
+            // lblAssistIndicator
+            // 
+            this.lblAssistIndicator.AutoSize = true;
+            this.lblAssistIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssistIndicator.ForeColor = System.Drawing.Color.Red;
+            this.lblAssistIndicator.Location = new System.Drawing.Point(315, 436);
+            this.lblAssistIndicator.Name = "lblAssistIndicator";
+            this.lblAssistIndicator.Size = new System.Drawing.Size(140, 25);
+            this.lblAssistIndicator.TabIndex = 28;
+            this.lblAssistIndicator.Text = "assist indicator";
+            // 
+            // lblAssistsLeft
+            // 
+            this.lblAssistsLeft.AutoSize = true;
+            this.lblAssistsLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAssistsLeft.ForeColor = System.Drawing.Color.White;
+            this.lblAssistsLeft.Location = new System.Drawing.Point(-3, 444);
+            this.lblAssistsLeft.Name = "lblAssistsLeft";
+            this.lblAssistsLeft.Size = new System.Drawing.Size(181, 32);
+            this.lblAssistsLeft.TabIndex = 29;
+            this.lblAssistsLeft.Text = "Assists left: 0";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -477,5 +522,8 @@
         private System.Windows.Forms.Button btnSkip;
         private System.Windows.Forms.Label lblSkipIndicator;
         private System.Windows.Forms.Button btnPowerpoint;
+        private System.Windows.Forms.Button btnAssist;
+        private System.Windows.Forms.Label lblAssistIndicator;
+        private System.Windows.Forms.Label lblAssistsLeft;
     }
 }

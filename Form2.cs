@@ -26,8 +26,10 @@ namespace APPR_QuizMester_lj3p1
         int correctAnswers = 0;
         int wrongAnswers = 0;
         int skipsLeft = 1;
+        int assistsLeft = 1;
         // Get the questions from a class (Question.cs) and the database
         private List<Question> questions = new List<Question>();
+        private List<Question> assistQuestions = new List<Question>();
         // The question index is initiated at 0
         private int currentQuestionIndex = 0;
         // Declare and access the username variable passed along by Form1
@@ -38,6 +40,7 @@ namespace APPR_QuizMester_lj3p1
             // Access the username and initialize the project
             InitializeComponent();
             LoadQuestionsFromDatabase();
+            LoadAssistQuestion();
             DisplayQuestion();
             LoadTopScores();
             _username = username;
@@ -53,6 +56,9 @@ namespace APPR_QuizMester_lj3p1
             ClearSelection();
             lblScoreIndicator.Text = "";
             lblSkipIndicator.Text = "";
+            lblAssistIndicator.Text = "";
+            lblSkipsLeft.Text = "Skips left: " + skipsLeft.ToString();
+            lblAssistsLeft.Text = "Assists left: " + assistsLeft.ToString();
             lblTimeLeft.Text = timeLeft.ToString();
         }
 
@@ -133,7 +139,89 @@ namespace APPR_QuizMester_lj3p1
             }
             else
             {
-                // Show a MessageBox saying the quiz has been completed (unlikely)
+                // Show a MessageBox saying the quiz has been completed
+                MessageBox.Show("Quiz completed!");
+            }
+        }
+
+        private void LoadAssistQuestion()
+        {
+            // Database connection string
+            string connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=QuizMesterDatabase;Integrated Security=True";
+
+            // Add a new SQL database connection using the connectionString
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Open the database connection
+                connection.Open();
+                // Add a query to select the questions, wrong answers and correct answer from the database
+                // Order by NEWID() which sorts the question index randomly (built-in function)
+                string query = "SELECT QuestionText, WrongAnswer1, CorrectAnswer FROM Questions ORDER BY NEWID()";
+                // Declare a new SQLCommand using the query and connectionString
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    // Declare a new SQL data reader to fetch data from the database
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        // While the reader is active
+                        while (reader.Read())
+                        {
+                            // Fetch all data from the row the query was executed on
+                            string assistQuestionText = reader.GetString(0);
+                            string assistWrongAnswer1 = reader.GetString(1);
+                            string assistWrongAnswer2 = "THIS IS WRONG.";
+                            string assistWrongAnswer3 = "THIS IS WRONG.";
+                            string assistCorrectAnswer = reader.GetString(2);
+
+                            // Save the data into a List item
+                            List<string> assistOptions = new List<string>
+                            {
+                                assistWrongAnswer1, assistWrongAnswer2, assistWrongAnswer3, assistCorrectAnswer
+                            };
+
+                            // Shuffle the options randomly
+                            Random rng = new Random();
+                            int assistOptionCount = assistOptions.Count;
+                            // While there is more than 1 option, shuffle the questions randomly
+                            while (assistOptionCount > 1)
+                            {
+                                // Decrement the options amount
+                                assistOptionCount--;
+                                // Declare a next option by returning a non-negative int
+                                // and increment 1 to the total amount
+                                int optionNext = rng.Next(assistOptionCount + 1);
+                                // Save the value of the next option
+                                string value = assistOptions[optionNext];
+                                assistOptions[optionNext] = assistOptions[optionNext];
+                                // Save the options into the value variable
+                                assistOptions[optionNext] = value;
+                            }
+                            // Save the question as an object, add the previous data into the object
+                            Question assistQuestion = new Question(assistQuestionText, assistOptions, assistCorrectAnswer);
+                            assistQuestions.Add(assistQuestion);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void DisplayAssistQuestion()
+        {
+            // Check if there are any questions left
+            if (currentQuestionIndex < assistQuestions.Count)
+            {
+                // Get the previously added data from the questions object at the selected question index
+                Question assistQuestion = assistQuestions[currentQuestionIndex];
+                // Add the data to the form elements
+                lblQuizQuestion.Text = assistQuestion.Text;
+                rbOption1.Text = assistQuestion.Options[0];
+                rbOption2.Text = assistQuestion.Options[1];
+                rbOption3.Text = assistQuestion.Options[2];
+                rbOption4.Text = assistQuestion.Options[3];
+            }
+            else
+            {
+                // Show a MessageBox saying the quiz has been completed
                 MessageBox.Show("Quiz completed!");
             }
         }
@@ -205,6 +293,7 @@ namespace APPR_QuizMester_lj3p1
             // Remove the score indicator every second
             lblScoreIndicator.Text = "";
             lblSkipIndicator.Text = "";
+            lblAssistIndicator.Text = "";
             // Check if the user has ran out of time
             if (timeLeft == 0)
             {
@@ -353,10 +442,7 @@ namespace APPR_QuizMester_lj3p1
             PowerPoint.Application pptApp = new PowerPoint.Application();
 
             // Open the PowerPoint presentation
-            PowerPoint.Presentation presentation = pptApp.Presentations.Open(powerpointFilePath,
-                                                                              Microsoft.Office.Core.MsoTriState.msoFalse,
-                                                                              Microsoft.Office.Core.MsoTriState.msoFalse,
-                                                                              Microsoft.Office.Core.MsoTriState.msoTrue);
+            PowerPoint.Presentation presentation = pptApp.Presentations.Open(powerpointFilePath, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoFalse, Microsoft.Office.Core.MsoTriState.msoTrue);
 
             // Start the slideshow from the beginning (index 1) and set it to loop continuously
             presentation.SlideShowSettings.StartingSlide = 1;
@@ -370,6 +456,23 @@ namespace APPR_QuizMester_lj3p1
             // Release COM objects to prevent memory leaks
             Marshal.ReleaseComObject(pptApp);
             Marshal.ReleaseComObject(presentation);
+        }
+
+        private void btnAssist_Click(object sender, EventArgs e)
+        {
+            if (assistsLeft > 0)
+            {
+                assistsLeft--;
+                // Increment the question index, clear all selections, display a new question
+                currentQuestionIndex++;
+                ClearSelection();
+                DisplayAssistQuestion();
+                lblAssistsLeft.Text = "Assists left: " + assistsLeft.ToString();
+            }
+            else
+            {
+                lblAssistIndicator.Text = "No assists left!";
+            }
         }
     }
 }
