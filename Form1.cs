@@ -83,6 +83,12 @@ namespace APPR_QuizMester_lj3p1
                         // and hand along the logged in user's username to access it
                         if (count > 0)
                         {
+                            if (ckbSpecialQuiz.Checked == true)
+                            {
+                                this.Hide();
+                                Form3 thirdForm = new Form3(username);
+                                thirdForm.Show();
+                            }
                             this.Hide();
                             Form2 secondForm = new Form2(username);
                             secondForm.Show();
@@ -94,7 +100,7 @@ namespace APPR_QuizMester_lj3p1
                         }
                     }
                 }
-            }    
+            }
         }
 
         private void txbPassword_TextChanged(object sender, EventArgs e)
