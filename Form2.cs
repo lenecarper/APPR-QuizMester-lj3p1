@@ -294,15 +294,31 @@ namespace APPR_QuizMester_lj3p1
                 // Check if the answer was correct by getting the .CorrectAnswer value and comparing
                 if (selectedAnswer == questions[currentQuestionIndex].CorrectAnswer)
                 {
-                    // Increment the user's current score by 15 points
-                    currentScore += 15;
-                    // Add the user's current score into the score label (convert int to string)
-                    lblCurrentScore.Text = currentScore.ToString();
-                    // Display how many points the user got underneath the score indicator
-                    lblScoreIndicator.Text = "+15";
-                    lblScoreIndicator.ForeColor = Color.Green;
-                    // Increment the user's correct answers by 1
-                    correctAnswers += 1;
+                    if (special == true)
+                    {
+                        // Increment the user's current score by 45 points on a special question
+                        currentScore += 45;
+                        // Add the user's current score into the score label (convert int to string)
+                        lblCurrentScore.Text = currentScore.ToString();
+                        // Display how many points the user got underneath the score indicator
+                        lblScoreIndicator.Text = "+45";
+                        lblScoreIndicator.ForeColor = Color.Green;
+                        // Increment the user's correct answers by 1
+                        correctAnswers += 1;
+                        special = false;
+                    }
+                    else
+                    {
+                        // Increment the user's current score by 15 points
+                        currentScore += 15;
+                        // Add the user's current score into the score label (convert int to string)
+                        lblCurrentScore.Text = currentScore.ToString();
+                        // Display how many points the user got underneath the score indicator
+                        lblScoreIndicator.Text = "+15";
+                        lblScoreIndicator.ForeColor = Color.Green;
+                        // Increment the user's correct answers by 1
+                        correctAnswers += 1;
+                    }
                 }
                 else
                 {
