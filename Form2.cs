@@ -9,6 +9,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using System.Media;
+using System.IO;
 using System.Windows.Forms;
 using PowerPoint = Microsoft.Office.Interop.PowerPoint;
 using System.Security.Cryptography;
@@ -157,6 +159,21 @@ namespace APPR_QuizMester_lj3p1
                 {
                     // Display a special question at a random index between 1 and 20
                     special = true;
+
+                    // Play a sound for the special question from a file path
+                    string soundFilePath = "C:\\xampp\\htdocs\\CSharp\\APPR-QuizMester-lj3p1\\APPR-QuizMester-lj3p1\\Resources\\special_sound.wav";
+                    if (File.Exists(soundFilePath))
+                    {
+                        using (var player = new SoundPlayer(soundFilePath))
+                        {
+                            player.Play();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sound file not found!");
+                    }
+
                     currentQuestionIndex = new Random().Next(1, 21);
                     specialQuestionsLeft--;
 
