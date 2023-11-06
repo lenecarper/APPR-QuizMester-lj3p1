@@ -89,9 +89,12 @@ namespace APPR_QuizMester_lj3p1
                                 Form3 thirdForm = new Form3(username);
                                 thirdForm.Show();
                             }
-                            this.Hide();
-                            Form2 secondForm = new Form2(username);
-                            secondForm.Show();
+                            else
+                            {
+                                this.Hide();
+                                Form2 secondForm = new Form2(username);
+                                secondForm.Show();
+                            }
                         }
                         else
                         {
